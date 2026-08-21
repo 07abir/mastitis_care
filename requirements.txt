@@ -1,0 +1,33 @@
+# Blockchain-verified mastitis screening - Python dependencies
+#
+#   pip install -r requirements.txt
+#
+# Pinned to lower bounds rather than exact versions so this still installs on a
+# fresh machine a year from now. If a demo has to be reproducible to the byte,
+# freeze it: pip freeze > requirements.lock.txt
+
+# ---- steps 1-3: data and models -----------------------------------------
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+joblib>=1.3
+
+# ---- step 4: hashing -----------------------------------------------------
+# web3 brings eth-hash with it, which is what Web3.keccak uses. src/hashing.py
+# falls back to a pure-Python keccak256 if neither is installed, so hashing works
+# even on a machine with no packages at all -- but install these for real use.
+eth-hash[pycryptodome]>=0.5
+
+# ---- steps 5-6: chain and oracle ----------------------------------------
+web3>=6.11
+python-dotenv>=1.0
+
+# ---- step 7: API and dashboard ------------------------------------------
+fastapi>=0.104
+uvicorn[standard]>=0.24
+pydantic>=2.4
+
+# ---- deployment ----------------------------------------------------------
+# Compiles the Solidity contract from Python, so there is no Node/Hardhat
+# toolchain to install. Only needed to run scripts/deploy_contract.py.
+py-solc-x>=2.0
