@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herd Register — Blockchain-Verified Mastitis Screening</title>
+<style>
+  :root {
+    color-scheme: light;
+
+    /* Cold-chain palette: galvanised steel, chilled milk, clinical petrol. */
+    --steel:    #E7EDEF;
+    --steel-dk: #D5E0E4;
+    --paper:    #FAFCFD;
+    --ink:      #14212A;
+    --ink-2:    #5A6C77;
+    --ink-3:    #8798A2;
+    --rule:     #C9D6DB;
+
+    --petrol:   #0A6B6B;   /* healthy / verified */
+    --petrol-bg:#E2F0EF;
+    --mulberry: #9E2B4E;   /* mastitic / failed */
+    --mulberry-bg:#F7E4E9;
+    --amber:    #A8712A;   /* review / simulated */
+    --amber-bg: #F6EBDA;
+
+    --mono: ui-monospace, "SFMono-Regular", "SF Mono", "Cascadia Mono",
+            "Roboto Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--steel);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.5;
+    /* Faint horizontal ruling, like a stock register page. */
+    background-image: repeating-linear-gradient(
+      to bottom, transparent 0 39px, rgba(20,33,42,.028) 39px 40px);
+  }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px 80px; }
+
+  a { color: var(--petrol); }
+
+  :focus-visible {
+    outline: 2px solid var(--petrol);
+    outline-offset: 2px;
+  }
+
+  /* ---------------------------------------------------------- masthead */
+  .masthead {
+    border-bottom: 2px solid var(--ink);
+    padding: 32px 0 18px;
+    margin-bottom: 0;
+  }
+
+  .eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    align-items: baseline;
+    font-size: 10.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .eyebrow .sep { color: var(--ink-3); }
+
+  h1 {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: clamp(28px, 5.2vw, 47px);
+    line-height: .98;
+    letter-spacing: -.028em;
+    margin: 14px 0 0;
+    text-transform: uppercase;
+  }
+  h1 .thin { font-weight: 300; color: var(--ink-2); }
+
+  .thesis {
+    max-width: 62ch;
+    margin: 14px 0 0;
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.62;
+  }
+  .thesis strong { color: var(--ink); font-weight: 500; }
+
+  /* ------------------------------------------------------ counter strip */
+  .counters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  .counter {
+    padding: 15px 16px 13px;
+    border-right: 1px solid var(--rule);
+  }
+  .counter:last-child { border-right: 0; }
+  .counter .k {
+    font-size: 9.5px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    display: block;
+  }
+  .counter .v {
+    font-size: 25px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.02em;
+    margin-top: 3px;
+    display: block;
+  }
+  .counter .v.pos  { color: var(--mulberry); }
+  .counter .v.ok   { color: var(--petrol); }
+  .counter .v.warn { color: var(--amber); }
+
+  /* --------------------------------------------------------- disclosure */
+  details.panel {
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  details.panel > summary {
+    cursor: pointer;
+    padding: 11px 16px;
+    font-size: 10.5px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  details.panel > summary::-webkit-details-marker { display: none; }
+  details.panel > summary::after { content: "＋"; color: var(--ink-3); }
+  details.panel[open] > summary::after { content: "－"; }
+  details.panel > summary:hover { color: var(--ink); }
+  .panel-body { padding: 4px 16px 20px; border-top: 1px solid var(--rule); }
+
+  table.grid {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+    font-size: 12px;
+  }
+  table.grid th, table.grid td {
+    text-align: right;
+    padding: 5px 9px;
+    border-bottom: 1px solid var(--steel-dk);
+    white-space: nowrap;
+  }
+  table.grid th {
+    font-weight: 400;
+    font-size: 9.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  table.grid th:first-child, table.grid td:first-child { text-align: left; }
+  table.grid tr.accent td { color: var(--petrol); border-bottom: 1px solid var(--rule); }
+  table.grid td.bad { color: var(--mulberry); }
+
+  .note {
+    margin: 14px 0 0;
+    padding: 11px 13px;
+    background: var(--amber-bg);
+    border-left: 3px solid var(--amber);
+    color: #6C4A1B;
+    font-size: 11.5px;
+    line-height: 1.6;
+    max-width: 88ch;
+  }
+  .note b { font-weight: 600; }
+
+  /* ----------------------------------------------------------- controls */
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 0; }
+  .chip {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    background: transparent;
+    color: var(--ink-2);
+    border: 1px solid var(--rule);
+    border-right-width: 0;
+    cursor: pointer;
+  }
+  .chip:last-child { border-right-width: 1px; }
+  .chip:hover { background: var(--paper); color: var(--ink); }
+  .chip[aria-pressed="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--steel);
+  }
+  .search {
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 7px 11px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+    min-width: 168px;
+    flex: 1 1 168px;
+    max-width: 280px;
+  }
+  .search::placeholder { color: var(--ink-3); }
+  .count {
+    margin-left: auto;
+    font-size: 10.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  /* ------------------------------------------------------------- ledger */
+  .ledger-head, .row-main {
+    display: grid;
+    grid-template-columns: 92px 108px 1fr 74px minmax(150px, 250px) 132px 30px;
+    gap: 12px;
+    align-items: center;
+  }
+  .ledger-head {
+    padding: 9px 14px;
+    font-size: 9.5px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    border-bottom: 1px solid var(--ink);
+  }
+  .ledger-head span:nth-child(4) { text-align: right; }
+
+  .row {
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  .row-main {
+    width: 100%;
+    padding: 11px 14px;
+    background: none;
+    border: 0;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  .row-main:hover { background: #F2F7F8; }
+  .row.open { border-bottom-color: var(--ink); }
+  .row.open .row-main { background: #F2F7F8; }
+
+  .tag {
+    font-weight: 600;
+    letter-spacing: .04em;
+  }
+
+  .status {
+    font-size: 10px;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .status::before {
+    content: "";
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex: none;
+  }
+  .status.healthy  { color: var(--petrol); }
+  .status.healthy::before  { background: var(--petrol); }
+  .status.mastitic { color: var(--mulberry); }
+  .status.mastitic::before { background: var(--mulberry); }
+
+  /* Risk shown as a filled bar so a farmer can scan severity at a glance. */
+  .risk { height: 6px; background: var(--steel-dk); position: relative; }
+  .risk i {
+    position: absolute; inset: 0 auto 0 0;
+    background: var(--petrol);
+    display: block;
+  }
+  .risk.hi i { background: var(--mulberry); }
+
+  .conf {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-2);
+  }
+
+  .hash {
+    color: var(--ink-2);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 11.5px;
+  }
+
+  .seal {
+    font-size: 9.5px;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border: 1px solid;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .seal.verified { color: var(--petrol);   border-color: var(--petrol);   background: var(--petrol-bg); }
+  .seal.sim      { color: var(--amber);    border-color: var(--amber);    background: var(--amber-bg); }
+  .seal.none     { color: var(--mulberry); border-color: var(--mulberry); background: var(--mulberry-bg); }
+
+  .caret { color: var(--ink-3); text-align: center; transition: transform .18s ease; }
+  .row.open .caret { transform: rotate(90deg); }
+
+  /* -------------------------------------------------------- proof panel */
+  .proof { display: none; padding: 4px 14px 20px; border-top: 1px solid var(--rule); }
+  .row.open .proof { display: block; }
+
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+    gap: 22px;
+    margin-top: 16px;
+  }
+  .block h4 {
+    font-size: 9.5px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    font-weight: 400;
+    margin: 0 0 8px;
+  }
+  .kv { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; font-size: 11.5px; }
+  .kv dt { color: var(--ink-3); }
+  .kv dd { margin: 0; word-break: break-all; }
+
+  .payload {
+    background: var(--ink);
+    color: #C6D8DC;
+    padding: 11px 12px;
+    font-size: 11px;
+    line-height: 1.65;
+    word-break: break-all;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+  .payload .val { color: #7FD4C4; }
+
+  /* Signature element: the digest recomputed in the browser, nibble by nibble. */
+  .strip {
+    margin-top: 9px;
+    font-size: 12.5px;
+    line-height: 1.9;
+    word-break: break-all;
+    letter-spacing: .055em;
+    min-height: 2.5em;
+  }
+  .strip b { font-weight: 400; color: var(--ink-3); }
+  .strip .ch { color: var(--ink-3); opacity: .28; }
+  .strip .ch.on  { color: var(--petrol);   opacity: 1; }
+  .strip .ch.off { color: var(--mulberry); opacity: 1; background: var(--mulberry-bg); }
+
+  .verdict {
+    margin-top: 10px;
+    font-size: 11.5px;
+    padding: 9px 11px;
+    border-left: 3px solid var(--rule);
+    color: var(--ink-2);
+    line-height: 1.6;
+  }
+  .verdict.pass { border-left-color: var(--petrol);   background: var(--petrol-bg);   color: #08514F; }
+  .verdict.fail { border-left-color: var(--mulberry); background: var(--mulberry-bg); color: #7C1F3B; }
+
+  .btn {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--steel);
+    cursor: pointer;
+    margin: 12px 8px 0 0;
+  }
+  .btn:hover { background: #263945; }
+  .btn.ghost { background: transparent; color: var(--ink); }
+  .btn.ghost:hover { background: var(--steel-dk); }
+  .btn:disabled { opacity: .45; cursor: default; }
+
+  .votes { display: grid; gap: 5px; margin: 0; padding: 0; list-style: none; font-size: 11.5px; }
+  .votes li { display: flex; gap: 9px; align-items: flex-start; }
+  .votes .v-mark { flex: none; width: 14px; font-weight: 600; }
+  .votes .yes { color: var(--mulberry); }
+  .votes .no  { color: var(--petrol); }
+
+  /* ------------------------------------------------------- empty / boot */
+  .empty {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 30px 26px;
+    margin-top: 22px;
+  }
+  .empty h3 {
+    font-family: var(--sans);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -.01em;
+    font-size: 17px;
+    margin: 0 0 10px;
+  }
+  .empty p { color: var(--ink-2); margin: 0 0 14px; max-width: 68ch; line-height: 1.65; }
+  .empty pre {
+    background: var(--ink);
+    color: #C6D8DC;
+    padding: 14px 15px;
+    font-size: 11.5px;
+    line-height: 1.85;
+    overflow-x: auto;
+    margin: 0;
+  }
+  .empty pre .c { color: #6E8792; }
+
+  footer {
+    margin-top: 34px;
+    padding-top: 15px;
+    border-top: 1px solid var(--rule);
+    font-size: 10.5px;
+    color: var(--ink-3);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 820px) {
+    .ledger-head { display: none; }
+    .row-main {
+      grid-template-columns: 1fr auto;
+      gap: 7px 12px;
+    }
+    .row-main .risk, .row-main .hash { display: none; }
+    .row-main .conf { text-align: left; }
+    .caret { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">
+    
+      <span class="sep">/</span>
+     
+      <span class="sep">/</span>
+ 
+      <span class="sep">/</span>
+      <span id="generatedLabel"></span>
+    </div>
+
+    <h1>Mastitis care</h1>
+
+    <p class="thesis">
+   
+    </p>
+  </header>
+
+  <section class="counters" id="counters" aria-label="Herd summary"></section>
+
+  <details class="panel" id="modelPanel">
+    <summary>Model performance &amp; honest caveats</summary>
+    <div class="panel-body" id="modelBody"></div>
+  </details>
+
+  <div class="controls">
+    <div class="chips" role="group" aria-label="Filter by status">
+      <button class="chip" data-filter="all"      aria-pressed="true">All</button>
+      <button class="chip" data-filter="mastitic" aria-pressed="false">Mastitic</button>
+      <button class="chip" data-filter="healthy"  aria-pressed="false">Healthy</button>
+      <button class="chip" data-filter="review"   aria-pressed="false">Needs review</button>
+    </div>
+    <input class="search" id="search" type="search" placeholder="Find a cow tag…"
+           aria-label="Find a cow by tag">
+    <span class="count" id="rowCount"></span>
+  </div>
+
+  <div class="ledger-head" aria-hidden="true">
+    <span>Tag</span><span>Status</span><span>Risk</span><span>Conf.</span>
+    <span>Record hash</span><span>Seal</span><span></span>
+  </div>
+
+  <main id="ledger"></main>
+
+  <footer>
+    <div id="footNote"></div>
+    <div style="margin-top:6px">
+      Hashing runs locally in this page — no result is taken on trust from the server.
+    </div>
+  </footer>
+</div>
+
+<!-- Written by `python -m src.database --export` alongside data.json. A browser
+     blocks fetch() of a file:// URL, but it will happily load a script, so this
+     is what lets the dashboard show real data when opened by double-click. If
+     the file is absent the tag fails quietly and the page falls back. -->
+<script src="./data.js"></script>
+<script>
+"use strict";
+
+/* ==========================================================================
+   keccak256 — Ethereum variant (pad byte 0x01, not SHA3's 0x06).
+   Byte-for-byte identical to src/keccak_fallback.py and verified against the
+   canonical vectors in verify/test_keccak_js.js. This is what lets a buyer
+   confirm a record without trusting this page's backend.
+   ========================================================================== */
+const RC = [
+  0x0000000000000001n, 0x0000000000008082n, 0x800000000000808An,
+  0x8000000080008000n, 0x000000000000808Bn, 0x0000000080000001n,
+  0x8000000080008081n, 0x8000000000008009n, 0x000000000000008An,
+  0x0000000000000088n, 0x0000000080008009n, 0x000000008000000An,
+  0x000000008000808Bn, 0x800000000000008Bn, 0x8000000000008089n,
+  0x8000000000008003n, 0x8000000000008002n, 0x8000000000000080n,
+  0x000000000000800An, 0x800000008000000An, 0x8000000080008081n,
+  0x8000000000008080n, 0x0000000080000001n, 0x8000000080008008n,
+];
+const ROT = [
+  [0, 36, 3, 41, 18], [1, 44, 10, 45, 2], [62, 6, 43, 15, 61],
+  [28, 55, 25, 21, 56], [27, 20, 39, 8, 14],
+];
+const M64 = (1n << 64n) - 1n;
+const RATE = 136;
+
+function rol(x, n) {
+  const s = BigInt(n % 64);
+  return s === 0n ? (x & M64) : (((x << s) | (x >> (64n - s))) & M64);
+}
+
+function keccakF(A) {
+  for (let r = 0; r < 24; r++) {
+    const C = [];
+    for (let x = 0; x < 5; x++) C[x] = A[x][0] ^ A[x][1] ^ A[x][2] ^ A[x][3] ^ A[x][4];
+    const D = [];
+    for (let x = 0; x < 5; x++) D[x] = C[(x + 4) % 5] ^ rol(C[(x + 1) % 5], 1);
+    for (let x = 0; x < 5; x++) for (let y = 0; y < 5; y++) A[x][y] ^= D[x];
+
+    const B = [[], [], [], [], []];
+    for (let x = 0; x < 5; x++)
+      for (let y = 0; y < 5; y++)
+        B[y][(2 * x + 3 * y) % 5] = rol(A[x][y], ROT[x][y]);
+
+    for (let x = 0; x < 5; x++)
+      for (let y = 0; y < 5; y++)
+        A[x][y] = (B[x][y] ^ (~B[(x + 1) % 5][y] & B[(x + 2) % 5][y])) & M64;
+
+    A[0][0] ^= RC[r];
+  }
+  return A;
+}
+
+function keccak256(bytes) {
+  const pad = RATE - (bytes.length % RATE);
+  const p = new Uint8Array(bytes.length + pad);
+  p.set(bytes);
+  if (pad === 1) { p[bytes.length] = 0x81; }
+  else { p[bytes.length] = 0x01; p[p.length - 1] = 0x80; }
+
+  let A = [[], [], [], [], []];
+  for (let x = 0; x < 5; x++) for (let y = 0; y < 5; y++) A[x][y] = 0n;
+
+  for (let off = 0; off < p.length; off += RATE) {
+    for (let i = 0; i < RATE / 8; i++) {
+      let lane = 0n;
+      for (let b = 7; b >= 0; b--) lane = (lane << 8n) | BigInt(p[off + i * 8 + b]);
+      A[i % 5][Math.floor(i / 5)] ^= lane;
+    }
+    A = keccakF(A);
+  }
+
+  const out = [];
+  for (let i = 0; out.length < 32; i++) {
+    const lane = A[i % 5][Math.floor(i / 5)];
+    for (let b = 0; b < 8 && out.length < 32; b++)
+      out.push(Number((lane >> BigInt(8 * b)) & 0xffn));
+  }
+  return "0x" + out.map(v => v.toString(16).padStart(2, "0")).join("");
+}
+
+/* Mirrors src/hashing.py canonical_payload. Keys sorted, no whitespace,
+   confidence as a fixed 4-decimal string. Change one and hashes stop matching. */
+function canonicalPayload(cowId, prediction, confidence, timestamp) {
+  return '{"confidence":"' + Number(confidence).toFixed(4) +
+         '","cow_id":"' + String(cowId) +
+         '","prediction":' + Number(prediction) +
+         ',"timestamp":' + Number(timestamp) + '}';
+}
+
+/* ==========================================================================
+   data loading — API first, then the exported file, then an empty state
+   ========================================================================== */
+const state = { records: [], stats: {}, model: {}, meta: {}, filter: "all", query: "", source: "" };
+
+const $  = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g,
+  c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+async function loadData() {
+  // 1. live API (uvicorn src.api:app)
+  try {
+    const [recs, stats] = await Promise.all([
+      fetch("/api/records?limit=5000").then(r => r.ok ? r.json() : Promise.reject()),
+      fetch("/api/stats").then(r => r.ok ? r.json() : Promise.reject()),
+    ]);
+    let model = {};
+    try { model = await fetch("/api/model").then(r => r.ok ? r.json() : {}); } catch (_) {}
+    let meta = {};
+    try { meta = await fetch("/api/health").then(r => r.ok ? r.json() : {}); } catch (_) {}
+    return {
+      records: recs.records || [], stats, model,
+      meta: {
+        contract_address: meta.contract_address,
+        explorer_tx_url: "https://amoy.polygonscan.com/tx/",
+        generated_at: new Date().toISOString(),
+      },
+      source: "api",
+    };
+  } catch (_) { /* fall through */ }
+
+  const fromExport = d => ({
+    records: d.records || [], stats: d.stats || {}, model: d.model || {},
+    meta: {
+      contract_address: d.contract_address,
+      explorer_tx_url: d.explorer_tx_url,
+      generated_at: d.generated_at,
+    },
+    source: "file",
+  });
+
+  // 2. data.js, already loaded by the script tag above — the file:// path
+  if (window.__DATA__ && Array.isArray(window.__DATA__.records)) {
+    return fromExport(window.__DATA__);
+  }
+
+  // 3. data.json over http, if something is serving this folder
+  try {
+    return fromExport(await fetch("./data.json").then(r => r.ok ? r.json() : Promise.reject()));
+  } catch (_) { /* fall through */ }
+
+  return { records: [], stats: {}, model: {}, meta: {}, source: "none" };
+}
+
+/* ==========================================================================
+   render
+   ========================================================================== */
+function renderMasthead() {
+  const modes = state.stats.chain_modes || {};
+  const real = modes.real || 0, mock = modes.mock || 0;
+
+  let label = "no records";
+  if (real && mock)  label = `${real} on chain · ${mock} simulated`;
+  else if (real)     label = "Polygon Amoy";
+  else if (mock)     label = "local simulation";
+  $("#chainLabel").textContent = label;
+
+  const addr = state.meta.contract_address;
+  $("#contractLabel").textContent = addr
+    ? addr.slice(0, 10) + "…" + addr.slice(-6)
+    : "no contract bound";
+
+  const g = state.meta.generated_at;
+  $("#generatedLabel").textContent = g
+    ? "as of " + new Date(g).toLocaleString([], { dateStyle: "medium", timeStyle: "short" })
+    : "";
+
+  const src = { api: "Live from the API.", file: "Read from data.json.", none: "" }[state.source] || "";
+  $("#footNote").textContent = src +
+    (mock ? " Records marked SIMULATED come from the local mock chain, not a public ledger." : "");
+}
+
+function renderCounters() {
+  const s = state.stats;
+  const cells = [
+    ["Cows screened", s.distinct_cows ?? 0, ""],
+    ["Mastitic", s.mastitic ?? 0, "pos"],
+    ["Healthy", s.healthy ?? 0, "ok"],
+    ["Sealed on chain", s.onchain_verified ?? 0, "ok"],
+    ["Needs review", (s.needs_review ?? 0) + (s.consensus_disputed ?? 0), "warn"],
+    ["Mean confidence", s.avg_confidence != null ? (s.avg_confidence * 100).toFixed(1) + "%" : "—", ""],
+  ];
+  $("#counters").innerHTML = cells.map(([k, v, cls]) =>
+    `<div class="counter"><span class="k">${esc(k)}</span><span class="v ${cls}">${esc(v)}</span></div>`
+  ).join("");
+}
+
+function renderModelPanel() {
+  const m = state.model || {};
+  if (!m.ensemble && !m.per_model) {
+    $("#modelPanel").style.display = "none";
+    return;
+  }
+
+  const pct = v => v == null ? "—" : (v * 100).toFixed(2) + "%";
+  let html = "";
+
+  if (m.per_model) {
+    html += `<table class="grid"><thead><tr>
+      <th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th><th>ROC&nbsp;AUC</th>
+      </tr></thead><tbody>`;
+    const nice = { knn: "K-nearest neighbours", logreg: "Logistic regression",
+                   mlp: "Neural network (MLP)", svm: "Support vector machine",
+                   nb: "Gaussian naive Bayes" };
+    for (const [k, v] of Object.entries(m.per_model)) {
+      html += `<tr><td>${esc(nice[k] || k)}</td><td>${pct(v.accuracy)}</td>
+        <td>${pct(v.precision)}</td><td>${pct(v.recall)}</td><td>${pct(v.f1)}</td>
+        <td>${pct(v.roc_auc)}</td></tr>`;
+    }
+    if (m.ensemble) {
+      const e = m.ensemble;
+      html += `<tr class="accent"><td><b>Soft-voting ensemble</b></td><td>${pct(e.accuracy)}</td>
+        <td>${pct(e.precision)}</td><td>${pct(e.recall)}</td><td>${pct(e.f1)}</td>
+        <td>${pct(e.roc_auc)}</td></tr>`;
+    }
+    html += `</tbody></table>`;
+  }
+
+  if (m.cross_validation) {
+    const cv = m.cross_validation;
+    html += `<p style="margin:13px 0 0;color:var(--ink-2);font-size:11.5px">
+      ${cv.folds}-fold cross-validation: <b>${pct(cv.mean)}</b> ± ${(cv.std * 100).toFixed(2)} pts</p>`;
+  }
+
+  // Noise sweep is the informative number when clean accuracy saturates.
+  const nr = m.noise_robustness;
+  if (nr && nr.accuracy_by_model) {
+    html += `<h4 style="font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
+      color:var(--ink-3);font-weight:400;margin:22px 0 8px">
+      Accuracy under sensor noise (× training std. dev.)</h4>`;
+    html += `<table class="grid"><thead><tr><th>Model</th>` +
+      nr.noise_levels.map(l => `<th>${l}σ</th>`).join("") + `</tr></thead><tbody>`;
+    for (const [k, row] of Object.entries(nr.accuracy_by_model)) {
+      const isEns = k === "ensemble";
+      html += `<tr${isEns ? ' class="accent"' : ""}><td>${isEns ? "<b>Ensemble</b>" : esc(k)}</td>` +
+        row.map(v => `<td class="${v < 0.5 ? "bad" : ""}">${(v * 100).toFixed(1)}%</td>`).join("") +
+        `</tr>`;
+    }
+    html += `</tbody></table>`;
+  }
+
+  const ens = m.ensemble || {};
+  if (ens.accuracy != null && ens.accuracy > 0.99) {
+    html += `<p class="note"><b>Read these numbers carefully.</b> Near-perfect
+      accuracy means this dataset is almost linearly separable — a single threshold
+      on somatic cell count alone already reaches about 99.9%. It is not evidence
+      the model would hold up on a working farm. The noise table above is the
+      more honest indicator of how each learner degrades as sensors drift.</p>`;
+  }
+  // Flag the weakest learner if it drags the average down. On clean data every
+  // model looks identical, so the only place a real difference shows up is here.
+  const rows = nr && nr.accuracy_by_model;
+  if (rows && rows.nb && rows.ensemble) {
+    const worst = m => Math.min(...rows[m]);
+    const others = Object.keys(rows).filter(k => k !== "nb" && k !== "ensemble");
+    const bestOther = Math.max(...others.map(worst));
+    const gap = bestOther - worst("nb");
+    if (gap > 0.05) {
+      html += `<p class="note"><b>Naive Bayes is the weak link.</b> At the
+        harshest noise level it scores ${(worst("nb") * 100).toFixed(1)}% against
+        ${(bestOther * 100).toFixed(1)}% for the best of the others, and it stays
+        confident while being wrong — which drags equal-weight soft voting down
+        with it (${(worst("ensemble") * 100).toFixed(1)}%). Retrain with
+        <code>--tune-weights</code> to down-weight or drop it.</p>`;
+    }
+  }
+
+  $("#modelBody").innerHTML = html;
+}
+
+function sealFor(r) {
+  if (r.chain_mode === "real" && r.onchain_verified) return ["verified", "Verified on chain"];
+  if (r.chain_mode === "mock") return ["sim", "Simulated locally"];
+  if (r.tx_hash) return ["none", "Unconfirmed"];
+  return ["none", "Not sealed"];
+}
+
+function visibleRecords() {
+  const q = state.query.trim().toLowerCase();
+  return state.records.filter(r => {
+    if (state.filter === "mastitic" && r.prediction !== 1) return false;
+    if (state.filter === "healthy"  && r.prediction !== 0) return false;
+    if (state.filter === "review"   && !(r.needs_review || r.consensus_agreed === false)) return false;
+    if (q && !String(r.cow_id).toLowerCase().includes(q)) return false;
+    return true;
+  });
+}
+
+function renderLedger() {
+  const rows = visibleRecords();
+  $("#rowCount").textContent = `${rows.length} of ${state.records.length} shown`;
+
+  if (!state.records.length) {
+    $("#ledger").innerHTML = emptyState();
+    return;
+  }
+  if (!rows.length) {
+    $("#ledger").innerHTML = `<div class="empty"><h3>Nothing matches</h3>
+      <p>No cow matches that tag or filter. Clear the search box or pick “All”.</p></div>`;
+    return;
+  }
+
+  $("#ledger").innerHTML = rows.map((r, i) => {
+    const [cls, text] = sealFor(r);
+    const risk = r.risk_score != null ? r.risk_score : (r.prediction ? r.confidence : 1 - r.confidence);
+    const status = r.prediction ? "mastitic" : "healthy";
+    const idx = state.records.indexOf(r);
+
+    return `<article class="row" data-idx="${idx}">
+      <button class="row-main" aria-expanded="false" aria-controls="proof-${i}">
+        <span class="tag">${esc(r.cow_id)}</span>
+        <span class="status ${status}">${status}</span>
+        <span class="risk ${risk >= 0.5 ? "hi" : ""}"><i style="width:${(risk * 100).toFixed(1)}%"></i></span>
+        <span class="conf">${(r.confidence * 100).toFixed(1)}%</span>
+        <span class="hash">${esc(r.result_hash)}</span>
+        <span><span class="seal ${cls}">${esc(text)}</span></span>
+        <span class="caret">▸</span>
+      </button>
+      <div class="proof" id="proof-${i}"></div>
+    </article>`;
+  }).join("");
+}
+
+function emptyState() {
+  return `<div class="empty">
+    <h3>No records yet</h3>
+    <p>The register is empty because the pipeline has not been run. From the
+       project folder, in order:</p>
+    <pre><span class="c"># once, to install dependencies</span>
+pip install -r requirements.txt
+
+<span class="c"># steps 1-6: train, predict, hash, seal, store</span>
+python run_pipeline.py
+
+<span class="c"># then serve this dashboard</span>
+uvicorn src.api:app --reload</pre>
+    <p style="margin-top:14px">Prefer to open this file directly with no server?
+       Run <code>python -m src.database --export</code> to write
+       <code>data.json</code> beside it, then reload.</p>
+  </div>`;
+}
+
+/* ==========================================================================
+   proof panel — the signature interaction
+   ========================================================================== */
+function proofMarkup(r) {
+  const payload = canonicalPayload(r.cow_id, r.prediction, r.confidence, r.timestamp);
+  const pretty = esc(payload)
+    .replace(/&quot;([^&]*)&quot;:/g, '&quot;<span class="val">$1</span>&quot;:');
+
+  const when = new Date(r.timestamp * 1000)
+    .toLocaleString([], { dateStyle: "medium", timeStyle: "short" });
+
+  let chainRows = `<dt>Seal</dt><dd>${esc(sealFor(r)[1])}</dd>`;
+  if (r.tx_hash) chainRows += `<dt>Transaction</dt><dd>${esc(r.tx_hash)}</dd>`;
+  if (r.block_number) chainRows += `<dt>Block</dt><dd>${esc(r.block_number)}</dd>`;
+  if (r.explorer_url) {
+    chainRows += `<dt>Explorer</dt><dd><a href="${esc(r.explorer_url)}"
+      target="_blank" rel="noopener noreferrer">View on Polygonscan ↗</a></dd>`;
+  } else if (r.chain_mode === "mock") {
+    chainRows += `<dt>Explorer</dt><dd style="color:var(--ink-3)">None — this
+      record is on the local mock chain, so there is no public transaction to
+      link to. Re-run with <code>CHAIN_MODE=real</code> to publish it.</dd>`;
+  }
+
+  let votesHtml = "";
+  if (Array.isArray(r.consensus_reasons) && r.consensus_reasons.length) {
+    const votes = r.consensus_votes || {};
+    votesHtml = `<div class="block"><h4>Oracle consensus — 2 of 3</h4><ul class="votes">` +
+      r.consensus_reasons.map(txt => {
+        // Each reason starts with its source name, e.g. "somatic cell count: …"
+        const key = String(txt).split(":")[0].trim().toLowerCase().replace(/ /g, "_");
+        const v = votes[key];
+        const mark = v === 1 ? '<span class="v-mark yes">✚</span>'
+                   : v === 0 ? '<span class="v-mark no">−</span>'
+                   : '<span class="v-mark">·</span>';
+        return `<li>${mark}<span>${esc(txt)}</span></li>`;
+      }).join("") + `</ul>`;
+    if (r.consensus_agreed === false) {
+      votesHtml += `<p class="verdict fail" style="margin-top:9px">${
+        r.consensus_ml_outvoted
+          ? "The sensor sources outvoted the model, so this cow was withheld from the chain for a vet to assess."
+          : "No clear majority, so this cow was withheld from the chain for a vet to assess."
+      }</p>`;
+    }
+    votesHtml += `</div>`;
+  }
+
+  return `<div class="proof-grid">
+    <div class="block">
+      <h4>What was hashed</h4>
+      <pre class="payload">${pretty}</pre>
+      <div class="strip" data-strip>
+        <b>Recomputed digest will appear here.</b>
+      </div>
+      <button class="btn" data-act="verify">Recompute hash</button>
+      <button class="btn ghost" data-act="tamper">Try tampering</button>
+      <div data-verdict></div>
+    </div>
+    <div class="block">
+      <h4>Record</h4>
+      <dl class="kv">
+        <dt>Tag</dt><dd>${esc(r.cow_id)}</dd>
+        <dt>Verdict</dt><dd>${r.prediction ? "Mastitic" : "Healthy"}</dd>
+        <dt>Confidence</dt><dd>${(r.confidence * 100).toFixed(2)}%</dd>
+        <dt>Risk score</dt><dd>${r.risk_score != null ? r.risk_score.toFixed(4) : "—"}</dd>
+        <dt>Screened</dt><dd>${esc(when)}</dd>
+        <dt>Stored hash</dt><dd>${esc(r.result_hash)}</dd>
+        ${chainRows}
+      </dl>
+    </div>
+    ${votesHtml}
+  </div>`;
+}
+
+/* Reveal the digest progressively, comparing against the stored hash as it goes.
+   The reveal is cosmetic; the comparison is real. */
+function runVerify(panel, r, tampered) {
+  const strip = panel.querySelector("[data-strip]");
+  const verdict = panel.querySelector("[data-verdict]");
+
+  // Nudge confidence by one hundredth of a point, staying inside [0,1] so the
+  // altered record is still a plausible one — the point is that plausible edits
+  // are caught, not obviously-broken ones.
+  const delta = r.confidence > 0.99 ? -0.01 : 0.01;
+  const conf = tampered ? r.confidence + delta : r.confidence;
+  const payload = canonicalPayload(r.cow_id, r.prediction, conf, r.timestamp);
+  const digest = keccak256(new TextEncoder().encode(payload));
+  const stored = String(r.result_hash || "").toLowerCase();
+  const match = digest.toLowerCase() === stored;
+
+  verdict.innerHTML = "";
+  strip.innerHTML = digest.split("").map((c, i) =>
+    `<span class="ch" data-i="${i}">${esc(c)}</span>`).join("");
+
+  const chars = strip.querySelectorAll(".ch");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const finish = () => {
+    if (tampered) {
+      verdict.innerHTML = `<p class="verdict fail"><b>Tampering detected.</b>
+        Confidence was nudged by 0.01 — from ${(r.confidence * 100).toFixed(2)}%
+        to ${(conf * 100).toFixed(2)}% — and the digest changed completely. It no
+        longer matches the sealed hash, so the altered record cannot pass as
+        genuine.</p>`;
+    } else if (match) {
+      verdict.innerHTML = `<p class="verdict pass"><b>Hash matches.</b> Your
+        browser rebuilt the digest from the values shown and got exactly the
+        hash on record. Nothing in this result has been altered since it was
+        sealed.</p>`;
+    } else {
+      verdict.innerHTML = `<p class="verdict fail"><b>Hash does not match.</b>
+        The recomputed digest differs from the stored one. Either these values
+        were edited after sealing, or they were hashed under different rules.</p>`;
+    }
+  };
+
+  const paint = i => {
+    const c = chars[i];
+    if (!c) return;
+    const ok = !tampered && match && digest[i].toLowerCase() === stored[i];
+    c.classList.add(ok ? "on" : (tampered || !match ? "off" : "on"));
+  };
+
+  if (reduce) {
+    chars.forEach((_, i) => paint(i));
+    finish();
+    return;
+  }
+  let i = 0;
+  const step = () => {
+    for (let n = 0; n < 3 && i < chars.length; n++, i++) paint(i);
+    if (i < chars.length) requestAnimationFrame(step);
+    else finish();
+  };
+  requestAnimationFrame(step);
+}
+
+/* ==========================================================================
+   events
+   ========================================================================== */
+$("#ledger").addEventListener("click", e => {
+  const head = e.target.closest(".row-main");
+  const act = e.target.closest("[data-act]");
+  const row = e.target.closest(".row");
+  if (!row) return;
+  const r = state.records[Number(row.dataset.idx)];
+
+  if (head) {
+    const panel = row.querySelector(".proof");
+    const open = row.classList.toggle("open");
+    head.setAttribute("aria-expanded", String(open));
+    if (open && !panel.dataset.built) {
+      panel.innerHTML = proofMarkup(r);
+      panel.dataset.built = "1";
+    }
+    return;
+  }
+  if (act) {
+    runVerify(row.querySelector(".proof"), r, act.dataset.act === "tamper");
+  }
+});
+
+document.querySelectorAll(".chip").forEach(chip => {
+  chip.addEventListener("click", () => {
+    document.querySelectorAll(".chip").forEach(c =>
+      c.setAttribute("aria-pressed", String(c === chip)));
+    state.filter = chip.dataset.filter;
+    renderLedger();
+  });
+});
+
+let searchTimer;
+$("#search").addEventListener("input", e => {
+  clearTimeout(searchTimer);
+  const v = e.target.value;
+  searchTimer = setTimeout(() => { state.query = v; renderLedger(); }, 130);
+});
+
+/* ==========================================================================
+   boot
+   ========================================================================== */
+(async function init() {
+  const d = await loadData();
+  Object.assign(state, d);
+  renderMasthead();
+  renderCounters();
+  renderModelPanel();
+  renderLedger();
+
+  // Self-check: if the shipped hasher ever drifts, say so rather than showing
+  // confident green ticks computed by broken code.
+  const known = keccak256(new TextEncoder().encode(""));
+  if (known !== "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470") {
+    $("#footNote").innerHTML = `<b style="color:var(--mulberry)">Warning: the
+      built-in keccak256 failed its self-test. Verification results on this page
+      cannot be trusted.</b>`;
+  }
+})();
+</script>
+</body>
+</html>

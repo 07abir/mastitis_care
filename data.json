@@ -1,0 +1,3767 @@
+{
+  "generated_at": "2026-08-20T20:38:49.567964+00:00",
+  "explorer_tx_url": "https://amoy.polygonscan.com/tx/",
+  "contract_address": null,
+  "stats": {
+    "total_records": 120,
+    "distinct_cows": 120,
+    "mastitic": 36,
+    "healthy": 84,
+    "onchain_verified": 120,
+    "needs_review": 0,
+    "consensus_disputed": 0,
+    "avg_confidence": 0.9959,
+    "chain_modes": {
+      "mock": 120
+    }
+  },
+  "model": {
+    "trained_at": "2026-08-20T20:38:42.671010+00:00",
+    "n_train": 640,
+    "n_test": 160,
+    "class_balance": {
+      "healthy": 631,
+      "mastitic": 169
+    },
+    "features": {
+      "numeric": [
+        "Milk_Temperature",
+        "Milk_pH",
+        "Milk_Conductivity",
+        "Somatic_Cell_Count",
+        "Milk_Yield"
+      ],
+      "binary": [
+        "Clotting"
+      ],
+      "categorical": [],
+      "dropped": [
+        "Day"
+      ]
+    },
+    "ensemble": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    "per_model": {
+      "knn": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "roc_auc": 1.0
+      },
+      "logreg": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "roc_auc": 1.0
+      },
+      "mlp": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "roc_auc": 1.0
+      },
+      "svm": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "roc_auc": 1.0
+      },
+      "nb": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "roc_auc": 1.0
+      }
+    },
+    "confusion_matrix": null,
+    "cross_validation": {
+      "folds": 5,
+      "scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "voting": {
+      "mode": "soft",
+      "weights": null,
+      "note": "equal weights"
+    },
+    "noise_robustness": {
+      "noise_levels": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+      ],
+      "accuracy_by_model": {
+        "knn": [
+          1.0,
+          1.0,
+          0.9925,
+          0.9637,
+          0.92,
+          0.8369
+        ],
+        "logreg": [
+          1.0,
+          1.0,
+          0.9863,
+          0.9444,
+          0.8944,
+          0.8187
+        ],
+        "mlp": [
+          1.0,
+          1.0,
+          0.9756,
+          0.9275,
+          0.8887,
+          0.8137
+        ],
+        "svm": [
+          1.0,
+          1.0,
+          0.9931,
+          0.9713,
+          0.93,
+          0.8469
+        ],
+        "nb": [
+          1.0,
+          1.0,
+          0.9725,
+          0.8631,
+          0.7412,
+          0.5825
+        ],
+        "ensemble": [
+          1.0,
+          1.0,
+          0.9888,
+          0.9481,
+          0.9056,
+          0.8213
+        ]
+      }
+    }
+  },
+  "records": [
+    {
+      "id": 125,
+      "cow_id": "C0120",
+      "prediction": 0,
+      "confidence": 0.9976,
+      "risk_score": 0.0024,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9976\",\"cow_id\":\"C0120\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x97848ca98f51f2a1f022e7281b028c4d3002369810240919e9b5e9fa0626c9b1",
+      "tx_hash": "0x7dfa33fd2e0b131f1c8b713ce06c60767e88088713b59b5056d3ee3574189aea",
+      "block_number": 1000120,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.76%)",
+        "somatic cell count: SCC 135k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:49.551013+00:00"
+    },
+    {
+      "id": 124,
+      "cow_id": "C0119",
+      "prediction": 0,
+      "confidence": 0.9985,
+      "risk_score": 0.0015,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9985\",\"cow_id\":\"C0119\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xe069c7097e6a5c5d4af82c9ae78098bdff344603e3fd55a2198cf668b36bd4f9",
+      "tx_hash": "0x077b826b73cd8406513abc051a32cbf220d4bb6e6aba09c0ef8477b1bafee9b3",
+      "block_number": 1000119,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.85%)",
+        "somatic cell count: SCC 124k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:49.501923+00:00"
+    },
+    {
+      "id": 123,
+      "cow_id": "C0118",
+      "prediction": 0,
+      "confidence": 0.9989,
+      "risk_score": 0.0011,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9989\",\"cow_id\":\"C0118\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x3439dcdaa7c03f5b915e7c5d6f95eec15da6cafb117fcb56d7014ec756bb1439",
+      "tx_hash": "0xbe4129552c4a31b6ba4b335d61c73c350a9faf1f941cc043d994847c75094ca1",
+      "block_number": 1000118,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.89%)",
+        "somatic cell count: SCC 122k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:49.425456+00:00"
+    },
+    {
+      "id": 122,
+      "cow_id": "C0117",
+      "prediction": 0,
+      "confidence": 0.9983,
+      "risk_score": 0.0017,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9983\",\"cow_id\":\"C0117\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xf5eba0660990d1c494cc4602054cf014210c7fb3f3af4b06cb46c15a5e3c38c1",
+      "tx_hash": "0xc03b42840f5eab40ffe4191fe55eed031bd471b18046dc38c1e4e655f3b22fe4",
+      "block_number": 1000117,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.83%)",
+        "somatic cell count: SCC 124k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:49.341058+00:00"
+    },
+    {
+      "id": 121,
+      "cow_id": "C0116",
+      "prediction": 0,
+      "confidence": 0.9989,
+      "risk_score": 0.0011,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9989\",\"cow_id\":\"C0116\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x2d65f534eb3a733b335f72329160a9df75c6da9583ce5659c80b40274d8454b6",
+      "tx_hash": "0x3cc40af8230a0217de616b2f255a8c6fb57e9b9b75fb7807584cabf9c386b1f4",
+      "block_number": 1000116,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.89%)",
+        "somatic cell count: SCC 126k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:49.287014+00:00"
+    },
+    {
+      "id": 120,
+      "cow_id": "C0115",
+      "prediction": 0,
+      "confidence": 0.9992,
+      "risk_score": 0.0008,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9992\",\"cow_id\":\"C0115\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xa3dbe4f2e88578af2fd244e53a34574fb693a2e08e000499aefe6ce95e636957",
+      "tx_hash": "0x7c784918882f647f33c0fb9fba4eb4dd01707421248ed382d8d1b24273d92d15",
+      "block_number": 1000115,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.92%)",
+        "somatic cell count: SCC 127k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:49.240235+00:00"
+    },
+    {
+      "id": 119,
+      "cow_id": "C0114",
+      "prediction": 0,
+      "confidence": 0.9992,
+      "risk_score": 0.0008,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9992\",\"cow_id\":\"C0114\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xe43fdc748c8287d125fd91d3d2532d3b5292c20964f20dfe6a992cdfa17b6d22",
+      "tx_hash": "0xc0adbebab31e021d57eaac82849a719d5d3369601d88e2f9e69fd10b75302bc2",
+      "block_number": 1000114,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.92%)",
+        "somatic cell count: SCC 78k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:49.191742+00:00"
+    },
+    {
+      "id": 118,
+      "cow_id": "C0113",
+      "prediction": 0,
+      "confidence": 0.9938,
+      "risk_score": 0.0062,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9938\",\"cow_id\":\"C0113\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x3b2c48d636747f18137788f1e6eb4de3cd4c16035904966b0886745e1527eecf",
+      "tx_hash": "0x01c9a469d87fd3dfe0526a467067b9fb9e303c7c964d155656655982441a7dd8",
+      "block_number": 1000113,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.38%)",
+        "somatic cell count: SCC 137k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:49.143541+00:00"
+    },
+    {
+      "id": 117,
+      "cow_id": "C0112",
+      "prediction": 0,
+      "confidence": 0.9994,
+      "risk_score": 0.0006,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9994\",\"cow_id\":\"C0112\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x11eea5e91ddfec717403e8c8e720e3f0d47ac407854ce6e7e6f0534a450525b3",
+      "tx_hash": "0x939c88da79dc7d8c1392ceb1986c423a3406849aaefce30a90b54be859304e04",
+      "block_number": 1000112,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.94%)",
+        "somatic cell count: SCC 199k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:49.090131+00:00"
+    },
+    {
+      "id": 116,
+      "cow_id": "C0111",
+      "prediction": 1,
+      "confidence": 0.9981,
+      "risk_score": 0.9981,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9981\",\"cow_id\":\"C0111\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0xb35b21c544d217fb4970559c18431a2ac4324932ac60f517f308f8dbb91afe8b",
+      "tx_hash": "0x149810fba9aef54a025ab96e863fd0a91389c31176a08b06b9d097e8aa1771d5",
+      "block_number": 1000111,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.81%)",
+        "somatic cell count: SCC 700k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.27 above 6.8; conductivity 6.65 above 5.5 mS/cm; temperature 37.93C above 37.5C; yield 8.0 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:49.024742+00:00"
+    },
+    {
+      "id": 115,
+      "cow_id": "C0110",
+      "prediction": 0,
+      "confidence": 0.9977,
+      "risk_score": 0.0023,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9977\",\"cow_id\":\"C0110\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x13703c5383d279a853fd3ff5076ca92a58e7e67b3c65b92a953cdd1874f66417",
+      "tx_hash": "0x900c12be852e1a543f7b0d920a68625130d2672827ecc9de2bec65031d198ff4",
+      "block_number": 1000110,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.77%)",
+        "somatic cell count: SCC 125k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:48.976888+00:00"
+    },
+    {
+      "id": 114,
+      "cow_id": "C0109",
+      "prediction": 0,
+      "confidence": 0.9972,
+      "risk_score": 0.0028,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9972\",\"cow_id\":\"C0109\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x5a812724470a57d5618c7a89d3d7ec0967ae2e197eaee94945cd92cb4db43504",
+      "tx_hash": "0xf70754960b720059880cc7daf340245afe872ec47134abd602ae0f72f5d187f9",
+      "block_number": 1000109,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.72%)",
+        "somatic cell count: SCC 138k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:48.926951+00:00"
+    },
+    {
+      "id": 113,
+      "cow_id": "C0108",
+      "prediction": 0,
+      "confidence": 0.9962,
+      "risk_score": 0.0038,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9962\",\"cow_id\":\"C0108\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x515aebbc77f989ea3ccfa7cf0a7d58108272d8205b35be572a67030e2b500173",
+      "tx_hash": "0xe81eececcb33446ce0d4ecad128c6ca36dad116f182e4e1862098e224dd8f7cc",
+      "block_number": 1000108,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.62%)",
+        "somatic cell count: SCC 129k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:48.857175+00:00"
+    },
+    {
+      "id": 112,
+      "cow_id": "C0107",
+      "prediction": 1,
+      "confidence": 0.9966,
+      "risk_score": 0.9966,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9966\",\"cow_id\":\"C0107\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x289b91aa0793b8b3a8b6ce708cc5b7fa53d8a7a61df165e781aa23c7e841dcda",
+      "tx_hash": "0x23c0c4a667788e85bfa0b0dc8213bf00a30c8883c7e2695898d640218c8d37ef",
+      "block_number": 1000107,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.66%)",
+        "somatic cell count: SCC 448k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.21 above 6.8; conductivity 7.15 above 5.5 mS/cm; temperature 38.70C above 37.5C; yield 11.2 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:48.689607+00:00"
+    },
+    {
+      "id": 111,
+      "cow_id": "C0106",
+      "prediction": 1,
+      "confidence": 0.9972,
+      "risk_score": 0.9972,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9972\",\"cow_id\":\"C0106\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x69ae80a8483ba6b99d7b224663c2e7eb9f67c9a34e1f75396ba7c3b50e5cd022",
+      "tx_hash": "0x8cd0ac8e9add02ef946804f9555bfe2d73938776856824265b0722db2c990996",
+      "block_number": 1000106,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.72%)",
+        "somatic cell count: SCC 818k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.31 above 6.8; conductivity 6.24 above 5.5 mS/cm; temperature 37.66C above 37.5C; yield 11.9 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:48.619328+00:00"
+    },
+    {
+      "id": 110,
+      "cow_id": "C0105",
+      "prediction": 0,
+      "confidence": 0.9985,
+      "risk_score": 0.0015,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9985\",\"cow_id\":\"C0105\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x8a7bd108044397569915a73fba16a469c9f24358e5ca61a54fb43a29911de989",
+      "tx_hash": "0x5368e2bb587f41de14d7a592b811efb2eb712407a742249bb7ff3b14a297a407",
+      "block_number": 1000105,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.85%)",
+        "somatic cell count: SCC 95k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:48.341061+00:00"
+    },
+    {
+      "id": 109,
+      "cow_id": "C0104",
+      "prediction": 0,
+      "confidence": 0.9988,
+      "risk_score": 0.0012,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9988\",\"cow_id\":\"C0104\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x9ebfe7a35bd9c826d6058dc12174c7e58ec3c0c5b50bbafea8cc6c3422c123f6",
+      "tx_hash": "0xa18e7ac01b11fc2a91702ca01f7e3b07713936efb72bd3ad5b65d77a1f8fcf8d",
+      "block_number": 1000104,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.88%)",
+        "somatic cell count: SCC 111k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:48.260007+00:00"
+    },
+    {
+      "id": 108,
+      "cow_id": "C0103",
+      "prediction": 1,
+      "confidence": 0.995,
+      "risk_score": 0.995,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9950\",\"cow_id\":\"C0103\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x5bbc46c38c9cc02393a75b824ed351f2d39fcfa9a035660882201483a47ec83c",
+      "tx_hash": "0x69ad9f71a5d973a5b97bae257c62483e4d49d87a18acbf7409d8f21de827d448",
+      "block_number": 1000103,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.50%)",
+        "somatic cell count: SCC 510k cells/mL >= 200k threshold",
+        "physical signs: 4 physical sign(s): clots present in milk; pH 7.09 above 6.8; conductivity 6.97 above 5.5 mS/cm; yield 5.2 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:48.205955+00:00"
+    },
+    {
+      "id": 107,
+      "cow_id": "C0102",
+      "prediction": 1,
+      "confidence": 0.9971,
+      "risk_score": 0.9971,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9971\",\"cow_id\":\"C0102\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x0efe110fd5b50ce803ff4474268fcc7d802509d10267bf1755140601db1abbb5",
+      "tx_hash": "0xfeabb79f25a10c256677ed515f98118835e4c0198bdd1997d66cba34b35107c8",
+      "block_number": 1000102,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.71%)",
+        "somatic cell count: SCC 559k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 6.97 above 6.8; conductivity 6.98 above 5.5 mS/cm; temperature 38.89C above 37.5C; yield 6.9 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:48.139259+00:00"
+    },
+    {
+      "id": 106,
+      "cow_id": "C0101",
+      "prediction": 1,
+      "confidence": 0.9963,
+      "risk_score": 0.9963,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9963\",\"cow_id\":\"C0101\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x6f1c894a5f7a1861e0a326da6a24aa32c75e3aa80bb19d8affc4c2f0d4f2add6",
+      "tx_hash": "0x0aed86f1463f6e3c35ca3b05810af38a625efa21dace99b106a12b74fc78958a",
+      "block_number": 1000101,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.63%)",
+        "somatic cell count: SCC 631k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.05 above 6.8; conductivity 7.16 above 5.5 mS/cm; temperature 37.68C above 37.5C; yield 8.2 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:48.074456+00:00"
+    },
+    {
+      "id": 105,
+      "cow_id": "C0100",
+      "prediction": 1,
+      "confidence": 0.9951,
+      "risk_score": 0.9951,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9951\",\"cow_id\":\"C0100\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x2143949f6007cad94f0644773a62fe8ab328fbe694cc14a4362a4ccb3304e409",
+      "tx_hash": "0xf334672b5ceb4432fbf65f4fd58c57215a1ef287456583d7f44f3ed3bf029ef4",
+      "block_number": 1000100,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.51%)",
+        "somatic cell count: SCC 624k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.06 above 6.8; conductivity 6.71 above 5.5 mS/cm; temperature 38.21C above 37.5C; yield 10.4 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:48.007073+00:00"
+    },
+    {
+      "id": 104,
+      "cow_id": "C0099",
+      "prediction": 0,
+      "confidence": 0.9981,
+      "risk_score": 0.0019,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9981\",\"cow_id\":\"C0099\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x4324a7b25ff7d5adf6db13d480f2fde3ed37a67c340c8ac437b2ab51f9550613",
+      "tx_hash": "0x83a7a332bac79656e99beb9be931bb38ebcc89a25ae573351ca368533bf51067",
+      "block_number": 1000099,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.81%)",
+        "somatic cell count: SCC 113k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:47.898041+00:00"
+    },
+    {
+      "id": 103,
+      "cow_id": "C0098",
+      "prediction": 0,
+      "confidence": 0.9988,
+      "risk_score": 0.0012,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9988\",\"cow_id\":\"C0098\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xc1c8d0a03440750914fc3bd163c730cab6953c938c85b356fd56b70e72238bac",
+      "tx_hash": "0xfe8547aa0290bd35a8a1d6e7d33fd12940f45a4be7f05040b55771efdd57656e",
+      "block_number": 1000098,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.88%)",
+        "somatic cell count: SCC 110k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:47.783747+00:00"
+    },
+    {
+      "id": 102,
+      "cow_id": "C0097",
+      "prediction": 0,
+      "confidence": 0.9974,
+      "risk_score": 0.0026,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9974\",\"cow_id\":\"C0097\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x956b2d1ab8b209b28ab32189b4ed7d3ba83d31d98e46c7deec6a96b83f07108c",
+      "tx_hash": "0xa4ac4e5bfc8431b8e288ca7f3846b51c7ea16a06bc85d18b2e03719f705c1d49",
+      "block_number": 1000097,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 1,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.74%)",
+        "somatic cell count: SCC 267k cells/mL >= 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:47.715451+00:00"
+    },
+    {
+      "id": 101,
+      "cow_id": "C0096",
+      "prediction": 0,
+      "confidence": 0.9993,
+      "risk_score": 0.0007,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9993\",\"cow_id\":\"C0096\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x8354e41fa6b6f203db0032aebf40650d02f47972a308fef9b0eba57e9f3b16ed",
+      "tx_hash": "0xef15732743edc69af26ba6f856248f38dcac87edcd6ca46e3127309f753054c2",
+      "block_number": 1000096,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.93%)",
+        "somatic cell count: SCC 128k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:47.502565+00:00"
+    },
+    {
+      "id": 100,
+      "cow_id": "C0095",
+      "prediction": 1,
+      "confidence": 0.9858,
+      "risk_score": 0.9858,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9858\",\"cow_id\":\"C0095\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0xe8b8aa4749b17bf2e1f499373d1eefa9440dcb968ef05bc8f2dd300b3ba8c613",
+      "tx_hash": "0xf482933554794508bed38c7be3e7bc5536849fe1a33c182fd5dd8903f08b683b",
+      "block_number": 1000095,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 98.58%)",
+        "somatic cell count: SCC 483k cells/mL >= 200k threshold",
+        "physical signs: 4 physical sign(s): pH 7.17 above 6.8; conductivity 7.21 above 5.5 mS/cm; temperature 38.08C above 37.5C; yield 7.6 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:47.454705+00:00"
+    },
+    {
+      "id": 99,
+      "cow_id": "C0094",
+      "prediction": 1,
+      "confidence": 0.9937,
+      "risk_score": 0.9937,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9937\",\"cow_id\":\"C0094\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0xa440f1f38283c46ab9360678b8cf9f92f8265635de75d5f1b6e0f91a54e596d2",
+      "tx_hash": "0x2e2b72294e36e996c895d1dfb28918d5e81fb2f453ff6198249655b31bfc6e78",
+      "block_number": 1000094,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.37%)",
+        "somatic cell count: SCC 520k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.26 above 6.8; conductivity 6.39 above 5.5 mS/cm; temperature 38.05C above 37.5C; yield 11.7 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:47.414220+00:00"
+    },
+    {
+      "id": 98,
+      "cow_id": "C0093",
+      "prediction": 1,
+      "confidence": 0.9694,
+      "risk_score": 0.9694,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9694\",\"cow_id\":\"C0093\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x85e643cc385be313a2d674b793499403ec16c4cedcb242cbb903d47019e22171",
+      "tx_hash": "0x543ded4adf0ebef4258705f5007ec17f56a81c01fef5f9dfeeb1b75f9e2e0f43",
+      "block_number": 1000093,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 96.94%)",
+        "somatic cell count: SCC 498k cells/mL >= 200k threshold",
+        "physical signs: 4 physical sign(s): pH 7.11 above 6.8; conductivity 6.71 above 5.5 mS/cm; temperature 37.73C above 37.5C; yield 8.7 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:47.375503+00:00"
+    },
+    {
+      "id": 97,
+      "cow_id": "C0092",
+      "prediction": 0,
+      "confidence": 0.9994,
+      "risk_score": 0.0006,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9994\",\"cow_id\":\"C0092\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x0bdf2e824cfad6338e6b9f34fcc6d470e4b5af95ba10cd82c6484bebfd10165d",
+      "tx_hash": "0x8756d7587b29397221e1ae02da2a8249ea26452768afbbed3ff1417f5e85768b",
+      "block_number": 1000092,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.94%)",
+        "somatic cell count: SCC 102k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:47.335392+00:00"
+    },
+    {
+      "id": 96,
+      "cow_id": "C0091",
+      "prediction": 0,
+      "confidence": 0.998,
+      "risk_score": 0.002,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9980\",\"cow_id\":\"C0091\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x9ddea3bf874c9c4ef9860e6f285351d6e9e51287ca8333693bf88ab02b4b4605",
+      "tx_hash": "0x201d2bd2c70b6f71deef897877031d02a0d426f951a4a247cf0df968fb296b19",
+      "block_number": 1000091,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.80%)",
+        "somatic cell count: SCC 164k cells/mL < 200k threshold",
+        "physical signs: 1 physical sign(s): pH 6.83 above 6.8"
+      ],
+      "created_at": "2026-08-20T20:38:47.238630+00:00"
+    },
+    {
+      "id": 95,
+      "cow_id": "C0090",
+      "prediction": 0,
+      "confidence": 0.9979,
+      "risk_score": 0.0021,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9979\",\"cow_id\":\"C0090\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xeb720201645a878a75ed2b349fc4e668ae7a84a848693251b392a3c971135901",
+      "tx_hash": "0x9c2b9e10bf46c94bc194ff5dfe622fb82c1744dbb4cde5136d9df4e100f6c795",
+      "block_number": 1000090,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.79%)",
+        "somatic cell count: SCC 126k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:47.203555+00:00"
+    },
+    {
+      "id": 94,
+      "cow_id": "C0089",
+      "prediction": 1,
+      "confidence": 0.9943,
+      "risk_score": 0.9943,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9943\",\"cow_id\":\"C0089\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x87a466810b66eeee566cf6af098877ca72cddc21aec873d74decc9208bbb8767",
+      "tx_hash": "0xc008a26c9765e86de4977337421b514d2cee918a5071e6fc6fa1cb1d9faf4642",
+      "block_number": 1000089,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.43%)",
+        "somatic cell count: SCC 552k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 6.97 above 6.8; conductivity 7.61 above 5.5 mS/cm; temperature 37.98C above 37.5C; yield 12.2 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:47.152082+00:00"
+    },
+    {
+      "id": 93,
+      "cow_id": "C0088",
+      "prediction": 1,
+      "confidence": 0.9893,
+      "risk_score": 0.9893,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9893\",\"cow_id\":\"C0088\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x59123c7ab5ccfe5b1bd9810c9394f5465fe94c1f737497c5e7ea6360d4b87d2e",
+      "tx_hash": "0x447fe84c584f0ccd376c3e2e6e8732db0a7d6faccf6ed19a3ce7ea0d14cfb2c8",
+      "block_number": 1000088,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 98.93%)",
+        "somatic cell count: SCC 443k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 6.97 above 6.8; conductivity 6.46 above 5.5 mS/cm; temperature 38.05C above 37.5C; yield 7.0 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:47.083079+00:00"
+    },
+    {
+      "id": 92,
+      "cow_id": "C0087",
+      "prediction": 0,
+      "confidence": 0.9982,
+      "risk_score": 0.0018,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9982\",\"cow_id\":\"C0087\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xd4b3c9be77d8a55af4c519e41666f922a080d5ce48b6de8b67cad16ca6fd86e5",
+      "tx_hash": "0xdf1996e974aadf1b5ca9e237eb64d9281280b2a9d1899ccfe49cd40353eb9b0f",
+      "block_number": 1000087,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.82%)",
+        "somatic cell count: SCC 74k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:47.020681+00:00"
+    },
+    {
+      "id": 91,
+      "cow_id": "C0086",
+      "prediction": 0,
+      "confidence": 0.9972,
+      "risk_score": 0.0028,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9972\",\"cow_id\":\"C0086\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x4401d808e512980e9cb8336557759dfbbdc2946b901d94950e3225b05e8a7db4",
+      "tx_hash": "0xde690bc99362bb4f7442f7b18e7a269a2f6ca56b3c7d5bf9ae0c7742426cafa4",
+      "block_number": 1000086,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.72%)",
+        "somatic cell count: SCC 133k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.975224+00:00"
+    },
+    {
+      "id": 90,
+      "cow_id": "C0085",
+      "prediction": 0,
+      "confidence": 0.9978,
+      "risk_score": 0.0022,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9978\",\"cow_id\":\"C0085\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xf6ab7361371f99676c45b642600e002be678ccb9ebb452848f84fc8781b7157c",
+      "tx_hash": "0xc00e767359ff958eeb292a2b466e68dbf706a29927ac734202624b986c3ec831",
+      "block_number": 1000085,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.78%)",
+        "somatic cell count: SCC 157k cells/mL < 200k threshold",
+        "physical signs: 1 physical sign(s): pH 6.82 above 6.8"
+      ],
+      "created_at": "2026-08-20T20:38:46.920518+00:00"
+    },
+    {
+      "id": 89,
+      "cow_id": "C0084",
+      "prediction": 1,
+      "confidence": 0.996,
+      "risk_score": 0.996,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9960\",\"cow_id\":\"C0084\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0xe9b8d67b1d3248f876cea42a58f448eae389c2b0bf9cd24125503bc736933223",
+      "tx_hash": "0xcdc6dcd928cdac4ed593c16af77ab006ceefa349ff2dc0c83d8b153fcec62fe7",
+      "block_number": 1000084,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.60%)",
+        "somatic cell count: SCC 509k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.09 above 6.8; conductivity 7.07 above 5.5 mS/cm; temperature 38.14C above 37.5C; yield 7.8 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:46.886593+00:00"
+    },
+    {
+      "id": 88,
+      "cow_id": "C0083",
+      "prediction": 1,
+      "confidence": 0.9984,
+      "risk_score": 0.9984,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9984\",\"cow_id\":\"C0083\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x13b09616312411aa4c4f1b767d37283a1142fd4fc182ed045077897545466600",
+      "tx_hash": "0xaf80d86aa457491cb9675ccc34ec568f8c9958399c8d86809e496a8104b8d888",
+      "block_number": 1000083,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.84%)",
+        "somatic cell count: SCC 553k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.15 above 6.8; conductivity 7.17 above 5.5 mS/cm; temperature 38.48C above 37.5C; yield 4.9 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:46.851555+00:00"
+    },
+    {
+      "id": 87,
+      "cow_id": "C0082",
+      "prediction": 0,
+      "confidence": 0.997,
+      "risk_score": 0.003,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9970\",\"cow_id\":\"C0082\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xf91d36b2b4f16ae76b366e12db6e050ccdbe863ecac62f8eafb5ea1ea89fe374",
+      "tx_hash": "0xbf1007bf75c3d8ab969699c12ef2c61fdd4da2c6f94874297d211792886ac1c9",
+      "block_number": 1000082,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.70%)",
+        "somatic cell count: SCC 145k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.787815+00:00"
+    },
+    {
+      "id": 86,
+      "cow_id": "C0081",
+      "prediction": 0,
+      "confidence": 0.9988,
+      "risk_score": 0.0012,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9988\",\"cow_id\":\"C0081\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x0e92fd42a030fb946181aee0d8ad586ac4f6b9ed4c453d2ed7d868c3f8b69a7d",
+      "tx_hash": "0xe3c635482ff7bf8b566c0f77ec4b559f62fa588c907cb8ec5434729c6b4e79e9",
+      "block_number": 1000081,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.88%)",
+        "somatic cell count: SCC 141k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.754034+00:00"
+    },
+    {
+      "id": 85,
+      "cow_id": "C0080",
+      "prediction": 0,
+      "confidence": 0.9975,
+      "risk_score": 0.0025,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9975\",\"cow_id\":\"C0080\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xd6df6e48deb75fdc07abe63a5a7c83bca7d1549d23d281ababa69f0bdaad91e4",
+      "tx_hash": "0x24529fd77e32a24cdfa0b5be8c6d972f06345c958a82f9dac59d1e5b26a588ad",
+      "block_number": 1000080,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 1,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.75%)",
+        "somatic cell count: SCC 204k cells/mL >= 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.717145+00:00"
+    },
+    {
+      "id": 84,
+      "cow_id": "C0079",
+      "prediction": 1,
+      "confidence": 0.9868,
+      "risk_score": 0.9868,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9868\",\"cow_id\":\"C0079\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x59b47f3b85365fe23db4deb6fc46ce02bdd999a9ec3c13bc4e52252d12f77b80",
+      "tx_hash": "0x59d9a4606cf06e7a768412a07d89dd9f4146d1fb09360b6e202883c9a0b0767b",
+      "block_number": 1000079,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 98.68%)",
+        "somatic cell count: SCC 529k cells/mL >= 200k threshold",
+        "physical signs: 4 physical sign(s): pH 7.14 above 6.8; conductivity 7.44 above 5.5 mS/cm; temperature 37.95C above 37.5C; yield 8.5 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:46.674010+00:00"
+    },
+    {
+      "id": 83,
+      "cow_id": "C0078",
+      "prediction": 1,
+      "confidence": 0.998,
+      "risk_score": 0.998,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9980\",\"cow_id\":\"C0078\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0xf1f43ce5f06320dee87507e0fd8b4debfb66b3157552dcc7aec6bfc07c5ef4c8",
+      "tx_hash": "0x208c1f06b67db246820abbd8da4eb392e9cfb47b8a12ee286fef8320f30e6e97",
+      "block_number": 1000078,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.80%)",
+        "somatic cell count: SCC 775k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.24 above 6.8; conductivity 6.58 above 5.5 mS/cm; temperature 38.71C above 37.5C; yield 13.4 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:46.638227+00:00"
+    },
+    {
+      "id": 82,
+      "cow_id": "C0077",
+      "prediction": 1,
+      "confidence": 0.9731,
+      "risk_score": 0.9731,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9731\",\"cow_id\":\"C0077\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x392d21534115b1911c17bc317e12688748d105a1ce695c476fe5d7e1d1e06406",
+      "tx_hash": "0xbdb40d87171a375deb79d1c61adefa24bc631e159a4b46e8a58e7f96458aa493",
+      "block_number": 1000077,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 97.31%)",
+        "somatic cell count: SCC 645k cells/mL >= 200k threshold",
+        "physical signs: 3 physical sign(s): pH 7.13 above 6.8; conductivity 6.28 above 5.5 mS/cm; yield 8.1 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:46.601091+00:00"
+    },
+    {
+      "id": 81,
+      "cow_id": "C0076",
+      "prediction": 0,
+      "confidence": 0.9989,
+      "risk_score": 0.0011,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9989\",\"cow_id\":\"C0076\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x6cc142f36fe48cd21132a3bd0d571e7c46b1d7fffa66b60aa35ff1aaab5e8946",
+      "tx_hash": "0xf337427523b6d159f7a371bd775e64f3b93a1b2f91e4767b72652564e2f16473",
+      "block_number": 1000076,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.89%)",
+        "somatic cell count: SCC 83k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.565193+00:00"
+    },
+    {
+      "id": 80,
+      "cow_id": "C0075",
+      "prediction": 0,
+      "confidence": 0.9953,
+      "risk_score": 0.0047,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9953\",\"cow_id\":\"C0075\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xea0008c1873133ba901b463353a0522eba528e11420b70d6f9711f341d73c2e6",
+      "tx_hash": "0x9583e8a67109adcc330471c2bd2b68b03165267c96530245b92779b089819e1a",
+      "block_number": 1000075,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.53%)",
+        "somatic cell count: SCC 126k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.523510+00:00"
+    },
+    {
+      "id": 79,
+      "cow_id": "C0074",
+      "prediction": 1,
+      "confidence": 0.9905,
+      "risk_score": 0.9905,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9905\",\"cow_id\":\"C0074\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x742ecf28d835b25a52b55fd44d0b8336ebf2481152a8f3bc1ab54cfb10a5868f",
+      "tx_hash": "0xb03de66ffc61445c0cf44e890c81d61508ece170a3b14e77581e5654e9d5da7b",
+      "block_number": 1000074,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.05%)",
+        "somatic cell count: SCC 595k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.14 above 6.8; conductivity 6.00 above 5.5 mS/cm; temperature 37.67C above 37.5C; yield 9.9 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:46.475856+00:00"
+    },
+    {
+      "id": 78,
+      "cow_id": "C0073",
+      "prediction": 0,
+      "confidence": 0.9976,
+      "risk_score": 0.0024,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9976\",\"cow_id\":\"C0073\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x0faeb6577f0194136f0b8f465745e877fc6f448bbabef3e00b59cb10620c1bf3",
+      "tx_hash": "0xe0ac8520152e3910b8e60c7f828b96ed69e2859a9850824cb2a32843c3b548b3",
+      "block_number": 1000073,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.76%)",
+        "somatic cell count: SCC 105k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.435062+00:00"
+    },
+    {
+      "id": 77,
+      "cow_id": "C0072",
+      "prediction": 0,
+      "confidence": 0.9974,
+      "risk_score": 0.0026,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9974\",\"cow_id\":\"C0072\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x19af5aa7b94799be31eee68ce850f2b7aa5d08bc1e1e17875edf0e8f122b9b15",
+      "tx_hash": "0x16f88c8933bbe01b2d972b19a68813abe075c7efb1908d29892f4e1318d5ac65",
+      "block_number": 1000072,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.74%)",
+        "somatic cell count: SCC 161k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.375455+00:00"
+    },
+    {
+      "id": 76,
+      "cow_id": "C0071",
+      "prediction": 0,
+      "confidence": 0.9983,
+      "risk_score": 0.0017,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9983\",\"cow_id\":\"C0071\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x4e6afbee7671f21def3e9b96e7191b03d0655c59d49744dffd28fcf5faee00e2",
+      "tx_hash": "0x6fcddf77b0d0441d5660fca0f291c0657338d6e8e3cc514d5c949df61b9e4b6c",
+      "block_number": 1000071,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.83%)",
+        "somatic cell count: SCC 151k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.320513+00:00"
+    },
+    {
+      "id": 75,
+      "cow_id": "C0070",
+      "prediction": 1,
+      "confidence": 0.9954,
+      "risk_score": 0.9954,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9954\",\"cow_id\":\"C0070\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x3c091ebe5cf992465d35f8d140fb047ef755301d1a5b09920abdf87acdcd9995",
+      "tx_hash": "0xbe6941f7ba0bc1e1d6066381d2b248276c92921241346fe72756ab31a33c86b9",
+      "block_number": 1000070,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.54%)",
+        "somatic cell count: SCC 573k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.05 above 6.8; conductivity 7.00 above 5.5 mS/cm; temperature 37.51C above 37.5C; yield 6.3 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:46.269896+00:00"
+    },
+    {
+      "id": 74,
+      "cow_id": "C0069",
+      "prediction": 1,
+      "confidence": 0.9893,
+      "risk_score": 0.9893,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9893\",\"cow_id\":\"C0069\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x402ac23502869fc7c01f3df7a0c538e2f76136029afa0e427f8168d2df33e7a6",
+      "tx_hash": "0x36d25036e9d598d1907d610f4edd5f2994df461a49caae83599a26a58dff3a9a",
+      "block_number": 1000069,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 98.93%)",
+        "somatic cell count: SCC 427k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 6.97 above 6.8; conductivity 6.88 above 5.5 mS/cm; temperature 37.89C above 37.5C; yield 8.6 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:46.223201+00:00"
+    },
+    {
+      "id": 73,
+      "cow_id": "C0068",
+      "prediction": 0,
+      "confidence": 0.998,
+      "risk_score": 0.002,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9980\",\"cow_id\":\"C0068\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x470340a2c778d9ceda77744d3091764d242e416fe8c3edeceae4c3643c569fc2",
+      "tx_hash": "0x39fc06339b8469597a1b680cd4039f7b0d9a9958e0a69c99dbe6000fcab04d6d",
+      "block_number": 1000068,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.80%)",
+        "somatic cell count: SCC 157k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.175589+00:00"
+    },
+    {
+      "id": 72,
+      "cow_id": "C0067",
+      "prediction": 0,
+      "confidence": 0.9987,
+      "risk_score": 0.0013,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9987\",\"cow_id\":\"C0067\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x7069aa24d753d6280a5ab20a81482cbf2f652565760e61217cb045ec2f138f5a",
+      "tx_hash": "0x17c3f6830198a38d18457e25cd98613c4c014e934bc0396a02eabaeb1cd9d829",
+      "block_number": 1000067,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.87%)",
+        "somatic cell count: SCC 117k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.141589+00:00"
+    },
+    {
+      "id": 71,
+      "cow_id": "C0066",
+      "prediction": 0,
+      "confidence": 0.9935,
+      "risk_score": 0.0065,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9935\",\"cow_id\":\"C0066\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x56d1fc7011f6b50c4aa27e58196f9a225f801e618349d421f86937c2f537de3c",
+      "tx_hash": "0xfc14d3f13ae2584d5b78f8e6b00d0b263c80958aff3d6526c178fece4a04357b",
+      "block_number": 1000066,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.35%)",
+        "somatic cell count: SCC 177k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.109401+00:00"
+    },
+    {
+      "id": 70,
+      "cow_id": "C0065",
+      "prediction": 0,
+      "confidence": 0.9988,
+      "risk_score": 0.0012,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9988\",\"cow_id\":\"C0065\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xeab51b57fab2f8daff2a714858963c8dd04b4c2dfa62b87de43acfbc9d2ca3e3",
+      "tx_hash": "0xd49f564c81f8c9ca19d2955d15c2c463906965a8e052f717babf6d9d9c42c711",
+      "block_number": 1000065,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.88%)",
+        "somatic cell count: SCC 53k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.081900+00:00"
+    },
+    {
+      "id": 69,
+      "cow_id": "C0064",
+      "prediction": 0,
+      "confidence": 0.9993,
+      "risk_score": 0.0007,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9993\",\"cow_id\":\"C0064\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xcf78927c99bde45ecc6b5ce7db13099d2dd9066b532d328f22d17dee019fd8b2",
+      "tx_hash": "0xd2b93212d14412f0f531e31febf6d4af27923935fa1cf3e0b47077b4e8e82735",
+      "block_number": 1000064,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.93%)",
+        "somatic cell count: SCC 116k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.054559+00:00"
+    },
+    {
+      "id": 68,
+      "cow_id": "C0063",
+      "prediction": 0,
+      "confidence": 0.9949,
+      "risk_score": 0.0051,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9949\",\"cow_id\":\"C0063\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xb62bd93e793e21e54a2ae43f43c48889219508a34656cfd6245e791e9a1c2fc9",
+      "tx_hash": "0x0d633fe4b212f9d35885b197fc26df1f4aa6000d63ed81c8f266d9860be8b649",
+      "block_number": 1000063,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.49%)",
+        "somatic cell count: SCC 159k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.025474+00:00"
+    },
+    {
+      "id": 67,
+      "cow_id": "C0062",
+      "prediction": 0,
+      "confidence": 0.9985,
+      "risk_score": 0.0015,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9985\",\"cow_id\":\"C0062\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xde50975b249c2da09781958fad93208115d310d9b88f3a1521e31070f0434919",
+      "tx_hash": "0xa6697f1590197d41cef86c3bbb32a87f8a1348fad0e123c8edba3811a1763dd6",
+      "block_number": 1000062,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 1,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.85%)",
+        "somatic cell count: SCC 208k cells/mL >= 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:46.002201+00:00"
+    },
+    {
+      "id": 66,
+      "cow_id": "C0061",
+      "prediction": 0,
+      "confidence": 0.9972,
+      "risk_score": 0.0028,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9972\",\"cow_id\":\"C0061\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x5b3ec88156d002048555ad323f9ed26902768162cbaf2d0140ff1356653e2b34",
+      "tx_hash": "0xeb2fe40276e4aa3b49fa0837a7f6cc722dd6bf975164ad0b30f5695e07c12673",
+      "block_number": 1000061,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.72%)",
+        "somatic cell count: SCC 194k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.974314+00:00"
+    },
+    {
+      "id": 65,
+      "cow_id": "C0060",
+      "prediction": 1,
+      "confidence": 0.9981,
+      "risk_score": 0.9981,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9981\",\"cow_id\":\"C0060\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0xf88b5f01212e9aa036bc818252850152e7a933716d9db5886b49dee7c9a0337e",
+      "tx_hash": "0x4e56f55a4a49ec35ca81332be7664c77ad8db91c976c3b167aca26bb5a7a4af0",
+      "block_number": 1000060,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.81%)",
+        "somatic cell count: SCC 624k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.30 above 6.8; conductivity 6.73 above 5.5 mS/cm; temperature 38.45C above 37.5C; yield 9.7 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:45.948051+00:00"
+    },
+    {
+      "id": 64,
+      "cow_id": "C0059",
+      "prediction": 1,
+      "confidence": 0.9897,
+      "risk_score": 0.9897,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9897\",\"cow_id\":\"C0059\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0xc9198b0c0cf5edd33d00618d70bf72fe9d3a6cb7cc47f78098f4845f0bf3f7d8",
+      "tx_hash": "0x0da20e48985cd4022ddca3604d4eb2c93988d9bedd90f927bf727ede90e60d89",
+      "block_number": 1000059,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 98.97%)",
+        "somatic cell count: SCC 506k cells/mL >= 200k threshold",
+        "physical signs: 4 physical sign(s): clots present in milk; pH 7.08 above 6.8; conductivity 6.43 above 5.5 mS/cm; yield 6.8 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:45.919081+00:00"
+    },
+    {
+      "id": 63,
+      "cow_id": "C0058",
+      "prediction": 0,
+      "confidence": 0.9996,
+      "risk_score": 0.0004,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9996\",\"cow_id\":\"C0058\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x7b3f6d1dff5509a2113744952b8bd838346b60421cc5161e7d9c683ddd1a586d",
+      "tx_hash": "0x1dcdd8f00ceb0ca82af6565d4015bfd0c84b9cbac1560489305ca3184a8e9a95",
+      "block_number": 1000058,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.96%)",
+        "somatic cell count: SCC 136k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.890870+00:00"
+    },
+    {
+      "id": 62,
+      "cow_id": "C0057",
+      "prediction": 0,
+      "confidence": 0.9982,
+      "risk_score": 0.0018,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9982\",\"cow_id\":\"C0057\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x35ffc12b2819a6d7991bb76eb0173e0df684af99123e4aa49d6f0d4bd04ecfd9",
+      "tx_hash": "0xd8789a58e8dba09202108631c0bcf44c55f86f876f89d7862adc11a64ef4174a",
+      "block_number": 1000057,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.82%)",
+        "somatic cell count: SCC 58k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.865498+00:00"
+    },
+    {
+      "id": 61,
+      "cow_id": "C0056",
+      "prediction": 1,
+      "confidence": 0.963,
+      "risk_score": 0.963,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9630\",\"cow_id\":\"C0056\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0xf07b9f1dce6c2867cbf532e37ef346ef07e563a81939fda5bb4fbbee5279faac",
+      "tx_hash": "0x07d27d59702c7efb93dcc4c0746f574ebdd2b1fda86994544976768df52bf8d0",
+      "block_number": 1000056,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 96.30%)",
+        "somatic cell count: SCC 396k cells/mL >= 200k threshold",
+        "physical signs: 4 physical sign(s): clots present in milk; pH 6.85 above 6.8; conductivity 6.16 above 5.5 mS/cm; yield 8.1 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:45.837500+00:00"
+    },
+    {
+      "id": 60,
+      "cow_id": "C0055",
+      "prediction": 0,
+      "confidence": 0.9968,
+      "risk_score": 0.0032,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9968\",\"cow_id\":\"C0055\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xf4c9bdabd75a50b83191d3861210c248b0fdd723a0299d6a98050f683b5724e2",
+      "tx_hash": "0xb6b3ae2b6f06703cd81148e331f6f408867229d40c90070c243955160e3979ec",
+      "block_number": 1000055,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.68%)",
+        "somatic cell count: SCC 197k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.791235+00:00"
+    },
+    {
+      "id": 59,
+      "cow_id": "C0054",
+      "prediction": 0,
+      "confidence": 0.9989,
+      "risk_score": 0.0011,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9989\",\"cow_id\":\"C0054\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x485b7d04040be8f993614285a2fc065c9aecfb3af5631d98301912950345552b",
+      "tx_hash": "0xeb8aa92198bef4f321edf1a97337adb3aff448f7de8d6f6bd5caec7d496199ca",
+      "block_number": 1000054,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 1,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.89%)",
+        "somatic cell count: SCC 223k cells/mL >= 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.763915+00:00"
+    },
+    {
+      "id": 58,
+      "cow_id": "C0053",
+      "prediction": 0,
+      "confidence": 0.9988,
+      "risk_score": 0.0012,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9988\",\"cow_id\":\"C0053\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x1c4cd3509640e634dfd1c12388e08a5585a3a36897af769cb81dfce5537c29e8",
+      "tx_hash": "0xa3e6828c62baba9cf2b2cfdcc49431c020727e2f5520831967ad4a79ee82a184",
+      "block_number": 1000053,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.88%)",
+        "somatic cell count: SCC 134k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.737265+00:00"
+    },
+    {
+      "id": 57,
+      "cow_id": "C0052",
+      "prediction": 0,
+      "confidence": 0.9982,
+      "risk_score": 0.0018,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9982\",\"cow_id\":\"C0052\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x51dc5619bd3122aaf4ef0f0e02197ebcb2e8c961548d0a1368fe1d41dd87f337",
+      "tx_hash": "0x4290b37d23f8d634700744c31089058486ab6b710804e901b7cdf8350b1999c7",
+      "block_number": 1000052,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.82%)",
+        "somatic cell count: SCC 140k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.691696+00:00"
+    },
+    {
+      "id": 56,
+      "cow_id": "C0051",
+      "prediction": 0,
+      "confidence": 0.9977,
+      "risk_score": 0.0023,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9977\",\"cow_id\":\"C0051\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xe7ee18bf045c7d66c588bf9961bad04ffe9c546823a4909ceff8f8db8330dec1",
+      "tx_hash": "0x741c93279b75ae5fe30d2e4bbc0ac2cbd0dc956a3b2044303608705141c78d94",
+      "block_number": 1000051,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.77%)",
+        "somatic cell count: SCC 162k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.649715+00:00"
+    },
+    {
+      "id": 55,
+      "cow_id": "C0050",
+      "prediction": 0,
+      "confidence": 0.9988,
+      "risk_score": 0.0012,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9988\",\"cow_id\":\"C0050\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x8271c53b845a4b0159711bde9ff92eb551f52e1265ee8bbe7a069bc7ab872940",
+      "tx_hash": "0x2c0a20cb57167e03cfc8f630d14acb9a91376a766282176f87bb92d401ce9888",
+      "block_number": 1000050,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.88%)",
+        "somatic cell count: SCC 124k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.614722+00:00"
+    },
+    {
+      "id": 54,
+      "cow_id": "C0049",
+      "prediction": 1,
+      "confidence": 0.996,
+      "risk_score": 0.996,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9960\",\"cow_id\":\"C0049\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x6b795d223ae4fff428c6bfb9ec4e86c70d106925ce6ae966754228049c28495a",
+      "tx_hash": "0xf65e884e04a8f101839b227989dd8310345cb8b2a1adf105b9ceaab3b3619de8",
+      "block_number": 1000049,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.60%)",
+        "somatic cell count: SCC 388k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.33 above 6.8; conductivity 7.20 above 5.5 mS/cm; temperature 38.54C above 37.5C; yield 13.4 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:45.576484+00:00"
+    },
+    {
+      "id": 53,
+      "cow_id": "C0048",
+      "prediction": 0,
+      "confidence": 0.9985,
+      "risk_score": 0.0015,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9985\",\"cow_id\":\"C0048\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x7698fbaba75ea209751ebda560078bf410ad2c0601ed07bfd1fdeef83947ea5e",
+      "tx_hash": "0xf160fe987b35bbca1539119c804256ccc445388ab2842c107da1616996655d2e",
+      "block_number": 1000048,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.85%)",
+        "somatic cell count: SCC 140k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.542904+00:00"
+    },
+    {
+      "id": 52,
+      "cow_id": "C0047",
+      "prediction": 0,
+      "confidence": 0.9961,
+      "risk_score": 0.0039,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9961\",\"cow_id\":\"C0047\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x6bced85623e6b9be9593575aaad5423f8aac22e53e8a8fb77e52ce9b1892d36a",
+      "tx_hash": "0xbccaecd1bd37bc404fdd0a9d9822d6b6f9c37795ceb169b7db159ac43df45d4b",
+      "block_number": 1000047,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 1,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.61%)",
+        "somatic cell count: SCC 274k cells/mL >= 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.520018+00:00"
+    },
+    {
+      "id": 51,
+      "cow_id": "C0046",
+      "prediction": 1,
+      "confidence": 0.9751,
+      "risk_score": 0.9751,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9751\",\"cow_id\":\"C0046\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0xda953a89e0954e4abe418b539ec534bdb6a0d9c0a37ba626d1b37df7d7067d8c",
+      "tx_hash": "0x3d7e5d3924fa973198de2bd3d4b92185dd86714e6ee4092e706c586ddabb52f4",
+      "block_number": 1000046,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 97.51%)",
+        "somatic cell count: SCC 759k cells/mL >= 200k threshold",
+        "physical signs: 4 physical sign(s): pH 6.96 above 6.8; conductivity 6.78 above 5.5 mS/cm; temperature 37.62C above 37.5C; yield 11.0 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:45.493138+00:00"
+    },
+    {
+      "id": 50,
+      "cow_id": "C0045",
+      "prediction": 0,
+      "confidence": 0.9991,
+      "risk_score": 0.0009,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9991\",\"cow_id\":\"C0045\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x2b8386e44545c9c557418417540677102924974a0cad01e08b76946e593b8aa5",
+      "tx_hash": "0xaf8e189a2c6b616401edc98e998e15da82040f2304c9f7f3418a75964a3a22e0",
+      "block_number": 1000045,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.91%)",
+        "somatic cell count: SCC 139k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.471863+00:00"
+    },
+    {
+      "id": 49,
+      "cow_id": "C0044",
+      "prediction": 1,
+      "confidence": 0.9961,
+      "risk_score": 0.9961,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9961\",\"cow_id\":\"C0044\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x3058fad44b71c43013496f343a8137837effa8f2388dbdea811d7f01da1ae89b",
+      "tx_hash": "0x3d9c84fa7b5b8a3f7f246c96721a7239301d7cd0176d13eb82aa41ba1e4d3dd0",
+      "block_number": 1000044,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.61%)",
+        "somatic cell count: SCC 525k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.09 above 6.8; conductivity 7.08 above 5.5 mS/cm; temperature 38.34C above 37.5C; yield 9.2 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:45.442775+00:00"
+    },
+    {
+      "id": 48,
+      "cow_id": "C0043",
+      "prediction": 0,
+      "confidence": 0.9958,
+      "risk_score": 0.0042,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9958\",\"cow_id\":\"C0043\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xd7540148f557db1c30bfb035719dd34cc62c920a5512e1fb5fa5d937c8cb7a47",
+      "tx_hash": "0x167cd711e25353bc37a130e1af429759e020d4b296859d9771a6db85e35f32b0",
+      "block_number": 1000043,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.58%)",
+        "somatic cell count: SCC 162k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.417404+00:00"
+    },
+    {
+      "id": 47,
+      "cow_id": "C0042",
+      "prediction": 1,
+      "confidence": 0.994,
+      "risk_score": 0.994,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9940\",\"cow_id\":\"C0042\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x3797852e394866a6baebe47c71808ea8414f8a85e7e4fe1dba7f2c695754efef",
+      "tx_hash": "0xd138b1766fbc02d7c8f670f8337ea2262374a2bff2197e6d066a1e0b76811745",
+      "block_number": 1000042,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.40%)",
+        "somatic cell count: SCC 459k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.02 above 6.8; conductivity 7.14 above 5.5 mS/cm; temperature 38.06C above 37.5C; yield 8.2 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:45.384571+00:00"
+    },
+    {
+      "id": 46,
+      "cow_id": "C0041",
+      "prediction": 0,
+      "confidence": 0.9984,
+      "risk_score": 0.0016,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9984\",\"cow_id\":\"C0041\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x1e86d15785494183f3c0c2d56eac6b9d1716741086c86b7fcfea524dbe0249d1",
+      "tx_hash": "0x19f7d226df6499d2da9a71234a481a32c08cdfbb378f55010b398593c888ca64",
+      "block_number": 1000041,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.84%)",
+        "somatic cell count: SCC 85k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.354910+00:00"
+    },
+    {
+      "id": 45,
+      "cow_id": "C0040",
+      "prediction": 1,
+      "confidence": 0.9988,
+      "risk_score": 0.9988,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9988\",\"cow_id\":\"C0040\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x1954d0cd0d54108b50863a6f2d4b777957ad503d9d0a54e9a22797e6c5282987",
+      "tx_hash": "0x5651af6fb0e62ff256e146449ef88947702fae6e2843b4823d47252ead1a3755",
+      "block_number": 1000040,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.88%)",
+        "somatic cell count: SCC 632k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.11 above 6.8; conductivity 8.00 above 5.5 mS/cm; temperature 38.67C above 37.5C; yield 10.9 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:45.332375+00:00"
+    },
+    {
+      "id": 44,
+      "cow_id": "C0039",
+      "prediction": 0,
+      "confidence": 0.9992,
+      "risk_score": 0.0008,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9992\",\"cow_id\":\"C0039\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x27a407e0abd8d3dbd8ddc2879cdb3876773877afb4c55978c3a054b56bed18ba",
+      "tx_hash": "0x9652321571be9bf0c800effa67404d9695bd01d974b0a21a07e374b69ab09216",
+      "block_number": 1000039,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.92%)",
+        "somatic cell count: SCC 80k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.307775+00:00"
+    },
+    {
+      "id": 43,
+      "cow_id": "C0038",
+      "prediction": 1,
+      "confidence": 0.9935,
+      "risk_score": 0.9935,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9935\",\"cow_id\":\"C0038\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x9b154aef42cf396a26f1515421187870ca3726dd8d03a743a7956d744178d1d1",
+      "tx_hash": "0xa6436167071df16aa77fee5f975e025e87329c13404bd6f9950fe0b00be8db04",
+      "block_number": 1000038,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.35%)",
+        "somatic cell count: SCC 569k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.11 above 6.8; conductivity 6.83 above 5.5 mS/cm; temperature 37.62C above 37.5C; yield 10.3 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:45.284560+00:00"
+    },
+    {
+      "id": 42,
+      "cow_id": "C0037",
+      "prediction": 0,
+      "confidence": 0.9958,
+      "risk_score": 0.0042,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9958\",\"cow_id\":\"C0037\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x838f3989cbb69c7f0ef8d5464e531bee192f4446fcc63e5bfffcb19d65a8335c",
+      "tx_hash": "0x22b3c15414882701425d1ce826106f88f6427cfd22625a96e60bb39b763abc94",
+      "block_number": 1000037,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.58%)",
+        "somatic cell count: SCC 146k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.171438+00:00"
+    },
+    {
+      "id": 41,
+      "cow_id": "C0036",
+      "prediction": 0,
+      "confidence": 0.9989,
+      "risk_score": 0.0011,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9989\",\"cow_id\":\"C0036\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xbcf9f115adb34468f92de3c06c43d841659fc37593f8f54ecb2c7e59426dc95b",
+      "tx_hash": "0x1a6d6601329590802eb4c0b72c579dfd3f153e478a883865dcc2f880bb2df7d5",
+      "block_number": 1000036,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.89%)",
+        "somatic cell count: SCC 174k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.141182+00:00"
+    },
+    {
+      "id": 40,
+      "cow_id": "C0035",
+      "prediction": 1,
+      "confidence": 0.9987,
+      "risk_score": 0.9987,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9987\",\"cow_id\":\"C0035\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0xe9634c2f4fc52ec21a7797c143247bda4041483622de1772e7c7b629cf896221",
+      "tx_hash": "0xec0983e9786ddda48b427c77de8f6361a031fe9d900a6f85300ef6cdf276da8d",
+      "block_number": 1000035,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.87%)",
+        "somatic cell count: SCC 791k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.21 above 6.8; conductivity 7.08 above 5.5 mS/cm; temperature 38.04C above 37.5C; yield 9.1 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:45.102134+00:00"
+    },
+    {
+      "id": 39,
+      "cow_id": "C0034",
+      "prediction": 0,
+      "confidence": 0.9955,
+      "risk_score": 0.0045,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9955\",\"cow_id\":\"C0034\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x4026c51f04ddd92cb8fd1046c036c83f9522074f5679d730cc59d7248eb6dbed",
+      "tx_hash": "0x2ae9291f8b2e66d3ca44bc2b140922548defaeac86c6adcd6eaeff30b42094c3",
+      "block_number": 1000034,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 1,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.55%)",
+        "somatic cell count: SCC 234k cells/mL >= 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.057738+00:00"
+    },
+    {
+      "id": 38,
+      "cow_id": "C0033",
+      "prediction": 0,
+      "confidence": 0.9988,
+      "risk_score": 0.0012,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9988\",\"cow_id\":\"C0033\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x992825b129611ce41355e44d76c205237b56776567aa9284be3b72b101ed8161",
+      "tx_hash": "0x27daefb90063eb381b8a1354600e1354103f4fd8794aa1ba55c702881a04d19c",
+      "block_number": 1000033,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.88%)",
+        "somatic cell count: SCC 168k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:45.024390+00:00"
+    },
+    {
+      "id": 37,
+      "cow_id": "C0032",
+      "prediction": 0,
+      "confidence": 0.9984,
+      "risk_score": 0.0016,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9984\",\"cow_id\":\"C0032\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xcd8e2527215274ba6d4f4dd42811d3b524e071bb94107208be910ac733608631",
+      "tx_hash": "0xbb9f5fa67c08f681ed27fa0aff8366862985b7aaea5fe51181fdd83562a0346e",
+      "block_number": 1000032,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.84%)",
+        "somatic cell count: SCC 123k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.990335+00:00"
+    },
+    {
+      "id": 36,
+      "cow_id": "C0031",
+      "prediction": 0,
+      "confidence": 0.9983,
+      "risk_score": 0.0017,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9983\",\"cow_id\":\"C0031\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x66c592aa9c2f3b6cddb79ceb9feacd1a841e5a5246bf91d5d3caa8666d00a71a",
+      "tx_hash": "0x1bfddd3b1bd053955a2d5f593a9e413597eb1cc0e5ca0f96ee19586b0bdd168d",
+      "block_number": 1000031,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.83%)",
+        "somatic cell count: SCC 101k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.959650+00:00"
+    },
+    {
+      "id": 35,
+      "cow_id": "C0030",
+      "prediction": 0,
+      "confidence": 0.9961,
+      "risk_score": 0.0039,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9961\",\"cow_id\":\"C0030\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x24269a20685947b0bfc0947eb3f9e3e9c829b4b99b807c66ef6b03c91fd02a18",
+      "tx_hash": "0x5946236c742eb67c3446bb55e200cb886109bc4d11f64abab99bbe8cb40959f7",
+      "block_number": 1000030,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.61%)",
+        "somatic cell count: SCC 178k cells/mL < 200k threshold",
+        "physical signs: 1 physical sign(s): pH 6.83 above 6.8"
+      ],
+      "created_at": "2026-08-20T20:38:44.927013+00:00"
+    },
+    {
+      "id": 34,
+      "cow_id": "C0029",
+      "prediction": 0,
+      "confidence": 0.9984,
+      "risk_score": 0.0016,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9984\",\"cow_id\":\"C0029\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xd8c7f8d92313c85a7bd2938bc3a37077edb55c33a016ebb52034f8b4c6150908",
+      "tx_hash": "0xc944342a36ef22c81132fa5e5dd60cd614a548d8cec2d693a8c247483f594829",
+      "block_number": 1000029,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.84%)",
+        "somatic cell count: SCC 151k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.891068+00:00"
+    },
+    {
+      "id": 33,
+      "cow_id": "C0028",
+      "prediction": 0,
+      "confidence": 0.9991,
+      "risk_score": 0.0009,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9991\",\"cow_id\":\"C0028\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x901763dcd77ad587bd3f53bd045b9cf9dee9142ad278a8b351be63fdc0670343",
+      "tx_hash": "0x583ba394114d5c3eb994cff11da5d6c007664d37a808b4f46a1930baea3032f2",
+      "block_number": 1000028,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.91%)",
+        "somatic cell count: SCC 136k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.865111+00:00"
+    },
+    {
+      "id": 32,
+      "cow_id": "C0027",
+      "prediction": 0,
+      "confidence": 0.9976,
+      "risk_score": 0.0024,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9976\",\"cow_id\":\"C0027\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x115bca3dd4a9074ac07da8b39b06a20e4a88bf946b56ab4f1c7431fb89a0536f",
+      "tx_hash": "0x5c1ba9dc9f42ddf5c1a786fcd8e459ed9cd2229fdd8da2fdce512bd665e5bb12",
+      "block_number": 1000027,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.76%)",
+        "somatic cell count: SCC 168k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.837909+00:00"
+    },
+    {
+      "id": 31,
+      "cow_id": "C0026",
+      "prediction": 0,
+      "confidence": 0.9997,
+      "risk_score": 0.0003,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9997\",\"cow_id\":\"C0026\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xf9533c6342ff5d1588604d86a1ecfed227834829b1bac0fd17fb94cd6104f773",
+      "tx_hash": "0xfa37bcc0c1f40da700c9952845d1ece1b3b607abd5249b13519bdda48b673420",
+      "block_number": 1000026,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.97%)",
+        "somatic cell count: SCC 98k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.790930+00:00"
+    },
+    {
+      "id": 30,
+      "cow_id": "C0025",
+      "prediction": 0,
+      "confidence": 0.9968,
+      "risk_score": 0.0032,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9968\",\"cow_id\":\"C0025\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x6dd414e61a3f91db63c7615354cf4b79f5e70a207cbeb02928a7194b532377ec",
+      "tx_hash": "0xb8642e540a985397ef0aa7cce98d2d9c0d78f06f7c7d0b99fe50ae41b3535466",
+      "block_number": 1000025,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.68%)",
+        "somatic cell count: SCC 162k cells/mL < 200k threshold",
+        "physical signs: 1 physical sign(s): pH 6.91 above 6.8"
+      ],
+      "created_at": "2026-08-20T20:38:44.764456+00:00"
+    },
+    {
+      "id": 29,
+      "cow_id": "C0024",
+      "prediction": 1,
+      "confidence": 0.9946,
+      "risk_score": 0.9946,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9946\",\"cow_id\":\"C0024\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x07d485682e9d7167c90785a06f595f30cd399f3d73cd647efd50120156919cd7",
+      "tx_hash": "0x814e03987f2ea6dd130b03568e1d11043104ab9cb19e314203f967a491a21d32",
+      "block_number": 1000024,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.46%)",
+        "somatic cell count: SCC 544k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.28 above 6.8; conductivity 5.76 above 5.5 mS/cm; temperature 38.10C above 37.5C; yield 7.4 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:44.742174+00:00"
+    },
+    {
+      "id": 28,
+      "cow_id": "C0023",
+      "prediction": 0,
+      "confidence": 0.9975,
+      "risk_score": 0.0025,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9975\",\"cow_id\":\"C0023\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xd5600cf48c3abd9550c3f76f9a17f19a6ee44170a99a7df77170854374d96cb8",
+      "tx_hash": "0x458e60b2fceae9ee37d1f4515c1ba2590b682aebdca12e107f4fd38177a573a1",
+      "block_number": 1000023,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.75%)",
+        "somatic cell count: SCC 178k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.720274+00:00"
+    },
+    {
+      "id": 27,
+      "cow_id": "C0022",
+      "prediction": 0,
+      "confidence": 0.9992,
+      "risk_score": 0.0008,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9992\",\"cow_id\":\"C0022\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x28a8e37805852fe4e47e26bce4d8e40cad2d6257fae261001663d0eb4ee7b144",
+      "tx_hash": "0xbdd9bbe3756c4c9ce389594fb8173629f31fa59244996afa776f5ea9396cdc6a",
+      "block_number": 1000022,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.92%)",
+        "somatic cell count: SCC 143k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.682280+00:00"
+    },
+    {
+      "id": 26,
+      "cow_id": "C0021",
+      "prediction": 0,
+      "confidence": 0.9984,
+      "risk_score": 0.0016,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9984\",\"cow_id\":\"C0021\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xf1b6d6222ce9e0d52d07b74d2ace6ad8786cc067e3fb1bb9a7964acd839908bf",
+      "tx_hash": "0x6edfe0351956f5d55e3d6144ab52d65d3a21fc8e47a27f54d2001f40a2ecc8d0",
+      "block_number": 1000021,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 1,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.84%)",
+        "somatic cell count: SCC 226k cells/mL >= 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.650814+00:00"
+    },
+    {
+      "id": 25,
+      "cow_id": "C0020",
+      "prediction": 0,
+      "confidence": 0.9992,
+      "risk_score": 0.0008,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9992\",\"cow_id\":\"C0020\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x3e0afa46a0d14984766d75ee171386982fbf3de0d4067ef68cab8eef10b2cee2",
+      "tx_hash": "0x3c3464656fe35dc3e9c9d3ff5f554b0a2607af5b22d05837600939c8734110e3",
+      "block_number": 1000020,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.92%)",
+        "somatic cell count: SCC 85k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.624084+00:00"
+    },
+    {
+      "id": 24,
+      "cow_id": "C0019",
+      "prediction": 0,
+      "confidence": 0.9945,
+      "risk_score": 0.0055,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9945\",\"cow_id\":\"C0019\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x530d55fd959d9a7e449938ee195ea33396ad6dc8f239580bf5d5191de51c29f3",
+      "tx_hash": "0x78a6b6ce6de3005da62ddf4efc3f4b719b2f799e7bcf9b5e997772be1cd0c947",
+      "block_number": 1000019,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.45%)",
+        "somatic cell count: SCC 158k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.600186+00:00"
+    },
+    {
+      "id": 23,
+      "cow_id": "C0018",
+      "prediction": 0,
+      "confidence": 0.9951,
+      "risk_score": 0.0049,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9951\",\"cow_id\":\"C0018\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x432075bd3ff04ff85a219f3ec730c4bec1f96d0851f121512eaf0d8416777974",
+      "tx_hash": "0xa7c5a5d80c034f8a640079db002d97033f59c219bf0b708dac7d94d381c7afea",
+      "block_number": 1000018,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.51%)",
+        "somatic cell count: SCC 147k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.575129+00:00"
+    },
+    {
+      "id": 22,
+      "cow_id": "C0017",
+      "prediction": 1,
+      "confidence": 0.9971,
+      "risk_score": 0.9971,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9971\",\"cow_id\":\"C0017\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x6f254d4488e784db3b79c07f891f369d8e12b271b364edb660c780c0a34e5053",
+      "tx_hash": "0x2dc299620c4d3c930ee87566f4e7bb63dfe64bab2f807bbda056b2b04f57e371",
+      "block_number": 1000017,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.71%)",
+        "somatic cell count: SCC 777k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 7.05 above 6.8; conductivity 6.33 above 5.5 mS/cm; temperature 39.09C above 37.5C; yield 12.5 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:44.551896+00:00"
+    },
+    {
+      "id": 21,
+      "cow_id": "C0016",
+      "prediction": 1,
+      "confidence": 0.9952,
+      "risk_score": 0.9952,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9952\",\"cow_id\":\"C0016\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x8ba3c593613d356bf4cde90f6dcbb8d9640d10a1166795db1ac8e47bf8b4ca8d",
+      "tx_hash": "0x980cccc31dfcfc43ecd941f2316273dbba3e0f494823bfbed7561983a8b697fb",
+      "block_number": 1000016,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.52%)",
+        "somatic cell count: SCC 685k cells/mL >= 200k threshold",
+        "physical signs: 4 physical sign(s): clots present in milk; pH 7.30 above 6.8; conductivity 6.68 above 5.5 mS/cm; temperature 37.58C above 37.5C"
+      ],
+      "created_at": "2026-08-20T20:38:44.529921+00:00"
+    },
+    {
+      "id": 20,
+      "cow_id": "C0015",
+      "prediction": 1,
+      "confidence": 0.9782,
+      "risk_score": 0.9782,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9782\",\"cow_id\":\"C0015\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0xcccc50dd7d4433ee88173ca86ff7dbb3220e07d3630a6fb7c8dcf661def7abf6",
+      "tx_hash": "0x459895a1affa83bbc3fc10016d1ce0e60a71ae5096cdf726ba7232e0e5687423",
+      "block_number": 1000015,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 97.82%)",
+        "somatic cell count: SCC 597k cells/mL >= 200k threshold",
+        "physical signs: 4 physical sign(s): pH 7.03 above 6.8; conductivity 6.47 above 5.5 mS/cm; temperature 37.88C above 37.5C; yield 5.5 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:44.507678+00:00"
+    },
+    {
+      "id": 19,
+      "cow_id": "C0014",
+      "prediction": 0,
+      "confidence": 0.9985,
+      "risk_score": 0.0015,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9985\",\"cow_id\":\"C0014\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x411519120cca254f827cc6c71f72c23991d0e3a36a2dcc2328654d4e4db4159e",
+      "tx_hash": "0x8a2a6578413fb7401875becb498874437f6954f759d504ed7bb2c8d9b55b3fb3",
+      "block_number": 1000014,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.85%)",
+        "somatic cell count: SCC 94k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.486922+00:00"
+    },
+    {
+      "id": 18,
+      "cow_id": "C0013",
+      "prediction": 0,
+      "confidence": 0.9992,
+      "risk_score": 0.0008,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9992\",\"cow_id\":\"C0013\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x26d6b1d87de596c523b9e533baf8a1735bf5ba35230d2ab50ae312470f9d208a",
+      "tx_hash": "0x5e8abcbbca79dcb4021ca7c840245c5b3ab16c6992ab5a6861992e5971ea084b",
+      "block_number": 1000013,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.92%)",
+        "somatic cell count: SCC 111k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.458713+00:00"
+    },
+    {
+      "id": 17,
+      "cow_id": "C0012",
+      "prediction": 1,
+      "confidence": 0.9943,
+      "risk_score": 0.9943,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9943\",\"cow_id\":\"C0012\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0x69febf222e88184db9dd97ca77eece0c3b571323380239db082c3d1bb5e5bfa2",
+      "tx_hash": "0x90b51090c29cc48b47787cbe4f957a72a24478f34c524fef1aeee7e68d3985b2",
+      "block_number": 1000012,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.43%)",
+        "somatic cell count: SCC 762k cells/mL >= 200k threshold",
+        "physical signs: 5 physical sign(s): clots present in milk; pH 6.93 above 6.8; conductivity 6.29 above 5.5 mS/cm; temperature 38.37C above 37.5C; yield 10.8 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:44.424233+00:00"
+    },
+    {
+      "id": 16,
+      "cow_id": "C0011",
+      "prediction": 0,
+      "confidence": 0.9978,
+      "risk_score": 0.0022,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9978\",\"cow_id\":\"C0011\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xbeae09511bbae39e66762f4305bdde123e3c6b1db5612982b8cd6892d206446b",
+      "tx_hash": "0x1594d8e656a1cfff1ed6c91a39107347da2d8b2e006eeca6a4b691f020c9a5d8",
+      "block_number": 1000011,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.78%)",
+        "somatic cell count: SCC 151k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.400515+00:00"
+    },
+    {
+      "id": 15,
+      "cow_id": "C0010",
+      "prediction": 0,
+      "confidence": 0.9983,
+      "risk_score": 0.0017,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9983\",\"cow_id\":\"C0010\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xf2a9b8b3106dace157b3928f2e255c1c844070328328302e74682c7ce138bcbf",
+      "tx_hash": "0x5d58755b378f988aa5ee5d0cd2cebf8eda958066c309a5eb4b2029e38f5906fa",
+      "block_number": 1000010,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.83%)",
+        "somatic cell count: SCC 184k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.373966+00:00"
+    },
+    {
+      "id": 14,
+      "cow_id": "C0009",
+      "prediction": 0,
+      "confidence": 0.997,
+      "risk_score": 0.003,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9970\",\"cow_id\":\"C0009\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x53b5f1f5d9347532cfe3d730202141045988c0e8fc4e537983e043c9ebbb384b",
+      "tx_hash": "0x666de1dfa91e2600abca3d3458dd628a3053fc5309b96b9ab8ebac7a88a9be76",
+      "block_number": 1000009,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.70%)",
+        "somatic cell count: SCC 129k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.353175+00:00"
+    },
+    {
+      "id": 13,
+      "cow_id": "C0008",
+      "prediction": 1,
+      "confidence": 0.9911,
+      "risk_score": 0.9911,
+      "status": "mastitic",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9911\",\"cow_id\":\"C0008\",\"prediction\":1,\"timestamp\":1787258322}",
+      "result_hash": "0xad567bd7b962bdac131b90146a611a772da6e27a1c9088314a62d401255671e0",
+      "tx_hash": "0x4a8d5a8593e908d5d0719da59757875e178ba6099fb906342936116c5f2be6e4",
+      "block_number": 1000008,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 1,
+        "somatic_cell_count": 1,
+        "physical_signs": 1
+      },
+      "consensus_reasons": [
+        "ML ensemble: mastitic (confidence 99.11%)",
+        "somatic cell count: SCC 733k cells/mL >= 200k threshold",
+        "physical signs: 4 physical sign(s): pH 6.89 above 6.8; conductivity 7.33 above 5.5 mS/cm; temperature 38.48C above 37.5C; yield 6.9 L below 14.0 L"
+      ],
+      "created_at": "2026-08-20T20:38:44.321040+00:00"
+    },
+    {
+      "id": 12,
+      "cow_id": "C0007",
+      "prediction": 0,
+      "confidence": 0.999,
+      "risk_score": 0.001,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9990\",\"cow_id\":\"C0007\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xf563bc5e6c0722065352e2bcf17ba14feaa2b1333dcaad74edbbd428d5b765ad",
+      "tx_hash": "0xfb9053c4c313f221b34180041affe924167cbd82160e529f434b3364d17de4ed",
+      "block_number": 1000007,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.90%)",
+        "somatic cell count: SCC 173k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.288801+00:00"
+    },
+    {
+      "id": 11,
+      "cow_id": "C0006",
+      "prediction": 0,
+      "confidence": 0.9982,
+      "risk_score": 0.0018,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9982\",\"cow_id\":\"C0006\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xeb5b6a8a1b6c15d6852d5f8c2e953d7059b59bc5f0e1a8cf80c99be4f5fde303",
+      "tx_hash": "0x666cdb87044a54b8ac5f787e90fa5be2e7de8dff18022a4537d2637d602b93e5",
+      "block_number": 1000006,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.82%)",
+        "somatic cell count: SCC 108k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.267575+00:00"
+    },
+    {
+      "id": 10,
+      "cow_id": "C0005",
+      "prediction": 0,
+      "confidence": 0.999,
+      "risk_score": 0.001,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9990\",\"cow_id\":\"C0005\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xea0e75ba9284699e81ca9f5ab351de41903d0dcb7fd9aab13d91873e630c6436",
+      "tx_hash": "0xede1b95cf676547658af3b91397e3986ff1b9cff7d4daff3bbda75b652d2a2a8",
+      "block_number": 1000005,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.90%)",
+        "somatic cell count: SCC 142k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.243469+00:00"
+    },
+    {
+      "id": 9,
+      "cow_id": "C0004",
+      "prediction": 0,
+      "confidence": 0.9985,
+      "risk_score": 0.0015,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9985\",\"cow_id\":\"C0004\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x77241b3663a28ea779dc33b19b8c305445036739437071bf28fa27afbd94eb8d",
+      "tx_hash": "0x12d9b155bc0361e11397319543755c62566c0b654609b36119d43bed45fece8b",
+      "block_number": 1000004,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.85%)",
+        "somatic cell count: SCC 96k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.230216+00:00"
+    },
+    {
+      "id": 8,
+      "cow_id": "C0003",
+      "prediction": 0,
+      "confidence": 0.9964,
+      "risk_score": 0.0036,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9964\",\"cow_id\":\"C0003\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xe1585ef11cd1b2b6dbc872da7239794da8cf4781da01be6b3b55983fe4742625",
+      "tx_hash": "0x3fdd8e39012c32e55cd2755bb6bb97a9874ff6292285ece52d490a05076e6a2e",
+      "block_number": 1000003,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 1,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.64%)",
+        "somatic cell count: SCC 206k cells/mL >= 200k threshold",
+        "physical signs: 1 physical sign(s): pH 6.84 above 6.8"
+      ],
+      "created_at": "2026-08-20T20:38:44.209154+00:00"
+    },
+    {
+      "id": 7,
+      "cow_id": "C0002",
+      "prediction": 0,
+      "confidence": 0.9988,
+      "risk_score": 0.0012,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9988\",\"cow_id\":\"C0002\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0xd3047816e7725da0830d2f6de42afafc6a5e0cfe86c9dfb520223b64a817602a",
+      "tx_hash": "0xd56955c088e65cee24df82639a469ea162bef4fda190d4685d5e9d93568731f6",
+      "block_number": 1000002,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.88%)",
+        "somatic cell count: SCC 101k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.191997+00:00"
+    },
+    {
+      "id": 6,
+      "cow_id": "C0001",
+      "prediction": 0,
+      "confidence": 0.9986,
+      "risk_score": 0.0014,
+      "status": "healthy",
+      "timestamp": 1787258322,
+      "payload": "{\"confidence\":\"0.9986\",\"cow_id\":\"C0001\",\"prediction\":0,\"timestamp\":1787258322}",
+      "result_hash": "0x7b3c14ffe6fb742b15a1609228b6ceed09315746368e367ca92a14cb88bc4654",
+      "tx_hash": "0xb8651c46972a109e734abf11d7d2f71853e9e56d7540cc8150afce6675912c2f",
+      "block_number": 1000001,
+      "gas_used": 0,
+      "chain_mode": "mock",
+      "explorer_url": null,
+      "onchain_verified": true,
+      "needs_review": false,
+      "consensus_agreed": true,
+      "consensus_votes": {
+        "ml_ensemble": 0,
+        "somatic_cell_count": 0,
+        "physical_signs": 0
+      },
+      "consensus_reasons": [
+        "ML ensemble: healthy (confidence 99.86%)",
+        "somatic cell count: SCC 148k cells/mL < 200k threshold",
+        "physical signs: 0 physical sign(s): no physical signs detected"
+      ],
+      "created_at": "2026-08-20T20:38:44.172533+00:00"
+    }
+  ]
+}
